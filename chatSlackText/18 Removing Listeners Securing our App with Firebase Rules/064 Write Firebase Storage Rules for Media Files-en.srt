@@ -1,0 +1,220 @@
+1
+00:00:00,090 --> 00:00:04,020
+Going to take a look at securing our app by setting up some firebase rules.
+
+2
+00:00:04,020 --> 00:00:10,500
+But first we'll head into the user panel and we'll change the child for the storage ref and set the
+
+3
+00:00:10,500 --> 00:00:17,010
+path to Avatar slash users and sort of the dash that we previously had and the same for the message
+
+4
+00:00:17,010 --> 00:00:23,250
+form will change the path here within get path to chat slash private slash the interpolated channel
+
+5
+00:00:23,250 --> 00:00:25,380
+ID.
+
+6
+00:00:25,470 --> 00:00:29,170
+So this will make setting up some rules for a heart based stories a bit easier.
+
+7
+00:00:29,220 --> 00:00:33,180
+So to access our storage rules are going to go to the storage tab
+
+8
+00:00:36,470 --> 00:00:43,560
+and Normally we've been working in the files area but now we want to move to the rules area and this
+
+9
+00:00:43,560 --> 00:00:47,160
+is where we can set up some rules in order to better secure our store.
+
+10
+00:00:47,160 --> 00:00:51,820
+So we're not having any files added to our storage that we don't want.
+
+11
+00:00:52,290 --> 00:00:58,730
+So we're going to replace this bucket value with the name of our app.
+
+12
+00:00:58,900 --> 00:01:05,680
+In my case Riak slack clone and then end it with that app's Watcom or remove the code which starts with
+
+13
+00:01:05,680 --> 00:01:10,920
+match slash or pass and replace it with our own rule for the Avatar's path.
+
+14
+00:01:10,930 --> 00:01:18,310
+So this mash rule is going to match any new images that we're going to try to add to the Avatar's path
+
+15
+00:01:18,340 --> 00:01:26,380
+within our storage and we'll Mascha some path of slash users slash user ID and we wrap user ID and curly
+
+16
+00:01:26,380 --> 00:01:29,940
+braces since we're going to use this as a variable.
+
+17
+00:01:30,010 --> 00:01:37,690
+We're going to allow reads to images posted to our avatar path if requested off is not equal to know
+
+18
+00:01:37,990 --> 00:01:47,230
+if we have an authorized user and we're going to allow right to add a new image to our avatar path if
+
+19
+00:01:47,740 --> 00:01:55,120
+we have an authorized user if their ID is equal to the user id the end of the path that we're trying
+
+20
+00:01:55,120 --> 00:02:04,800
+to add an image to as well as if request resource content type if the content type of the image matches
+
+21
+00:02:06,490 --> 00:02:07,830
+the form.
+
+22
+00:02:08,880 --> 00:02:12,450
+Image slash dot star.
+
+23
+00:02:13,440 --> 00:02:20,760
+So if it's of any image type we're going to allow it to be posted to the Avatar path slash users slash
+
+24
+00:02:20,770 --> 00:02:27,820
+that user ID and we can also make sure that its size is less than 1 megabyte by saying request that
+
+25
+00:02:27,840 --> 00:02:33,540
+resource size less than 1 times a thousand twenty four times a thousand.
+
+26
+00:02:33,570 --> 00:02:43,150
+That equals 1 megabyte in terms of size and per images posted to our chat path will have a set path
+
+27
+00:02:43,270 --> 00:02:50,890
+which will match slash public and then end with the path of anything as represented with image path
+
+28
+00:02:51,040 --> 00:02:53,380
+equals star star.
+
+29
+00:02:53,380 --> 00:02:59,920
+Since we're using a random string in order to set the end of our image that we're adding to this path
+
+30
+00:03:00,550 --> 00:03:07,090
+we're going to allow reads once again if our users authenticated with requests that are not being equal
+
+31
+00:03:07,090 --> 00:03:18,880
+to know or copy all of the rules that we set for our write rules for our avatars no pasted in to write
+
+32
+00:03:18,900 --> 00:03:19,970
+rules here.
+
+33
+00:03:20,670 --> 00:03:27,060
+But we'll just remove where we're making sure that the users you idea is equal to the user ID.
+
+34
+00:03:27,660 --> 00:03:36,660
+Since we're not using that variable here then underneath are unmatching slash public.
+
+35
+00:03:36,990 --> 00:03:45,760
+We're going to match slash private and here our private channel once again consists of two user IDs
+
+36
+00:03:45,760 --> 00:03:46,430
+at the end.
+
+37
+00:03:47,390 --> 00:03:56,030
+User ID one and user ID to so there's as variables and then end with an image path sourced or are going
+
+38
+00:03:56,030 --> 00:04:10,470
+to allow reads if requests or doesn't know as well as if request or got new ID the ID of the user That's
+
+39
+00:04:10,500 --> 00:04:18,060
+requesting the image is equal to either user ID 1 or it's equal to user ID too.
+
+40
+00:04:18,990 --> 00:04:27,570
+So only the two users that we have for the given direct messages channel are going to be able to read
+
+41
+00:04:28,410 --> 00:04:30,590
+those direct messages no one else.
+
+42
+00:04:30,990 --> 00:04:38,970
+And we're going to allow right if our users authenticated and we can copy this conditional that we set
+
+43
+00:04:38,970 --> 00:04:41,630
+up for reading permissions.
+
+44
+00:04:44,230 --> 00:04:51,910
+And then we'll grab the remaining part of our first write rules or a set of write rules for avatars
+
+45
+00:04:51,910 --> 00:04:59,370
+where we're going to make sure that the resource has a content type of image slash whatever and that
+
+46
+00:04:59,440 --> 00:05:02,290
+the image size is less than 1 megabyte.
+
+47
+00:05:04,230 --> 00:05:05,460
+So all these rules
+
+48
+00:05:08,480 --> 00:05:14,570
+and the test is out back in our app we want to see if we can post messages with image content.
+
+49
+00:05:15,930 --> 00:05:21,900
+To each of our channels we'll first began with the public channel.
+
+50
+00:05:22,100 --> 00:05:26,500
+We can still upload an image there now and direct messages channel
+
+51
+00:05:30,510 --> 00:05:34,630
+will be the same.
+
+52
+00:05:34,640 --> 00:05:45,530
+We can also send an image message there and to change our avatar We'll select a different part of the
+
+53
+00:05:46,070 --> 00:05:53,510
+image that we previously used or crop it will click on change Avatar and now we can see within our avatar
+
+54
+00:05:53,510 --> 00:05:55,360
+preview that's been changed.
+
+55
+00:05:55,400 --> 00:05:58,830
+If we send a message our new avatar is included there as well.
+

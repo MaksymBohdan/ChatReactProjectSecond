@@ -1,0 +1,256 @@
+1
+00:00:00,280 --> 00:00:07,000
+We want to display some user information within our dropdown in our user panel component in particular
+
+2
+00:00:07,000 --> 00:00:11,620
+the user name the user that's currently signed in and to do that.
+
+3
+00:00:11,620 --> 00:00:22,550
+One approach would be to bring in redux in particular to use the connect function we could grab connect
+
+4
+00:00:22,550 --> 00:00:30,350
+from re-act redux and at the bottom at our export can wrap the user panel component with it
+
+5
+00:00:33,460 --> 00:00:42,380
+and also maps to prop's by creating the maps to prop's function where we take taken the global state
+
+6
+00:00:43,200 --> 00:00:46,250
+and return an object with the properties that we want from it.
+
+7
+00:00:49,360 --> 00:00:59,970
+So for example we could grab the current user property when we set our user from the user property we
+
+8
+00:00:59,970 --> 00:01:07,310
+could create a prop on our crops object of current user the value state user to our current user and
+
+9
+00:01:07,310 --> 00:01:12,500
+optionally we could restructure the state the state parameter so that we could just change the path
+
+10
+00:01:12,500 --> 00:01:17,800
+to use our current user but we'll leave it at state.
+
+11
+00:01:17,990 --> 00:01:27,090
+And now that we're mapping this property to our prop's we could log it within render referencing it
+
+12
+00:01:27,090 --> 00:01:30,600
+with this property current user.
+
+13
+00:01:30,810 --> 00:01:38,120
+And when our component loads our user panel loads more refresh the page and see we have all of the user
+
+14
+00:01:38,120 --> 00:01:41,140
+data from our global state.
+
+15
+00:01:41,180 --> 00:01:48,840
+This is one approach to passing state down from our global state to an individual components such as
+
+16
+00:01:48,840 --> 00:01:49,460
+user panel
+
+17
+00:01:53,000 --> 00:02:01,840
+but to get the user name value within our dropdown we can create a state object where we have this user
+
+18
+00:02:01,840 --> 00:02:11,140
+property and instead of logging the value within render to update state object we can't do it from the
+
+19
+00:02:11,140 --> 00:02:15,680
+render function need to create a lifecycle method such as component and mount.
+
+20
+00:02:16,000 --> 00:02:23,050
+And then when we get that user data we can set the state and in particular this user property that we
+
+21
+00:02:23,050 --> 00:02:28,260
+created consented to the stop Propst that current user
+
+22
+00:02:31,680 --> 00:02:38,990
+and then using the user property and state we going to get the username and get that from this state
+
+23
+00:02:38,990 --> 00:02:50,900
+DOT user dot display name and save that if we reload.
+
+24
+00:02:50,960 --> 00:02:57,760
+You can see we're getting an error the areas we can't read the property display name of nolle.
+
+25
+00:02:57,930 --> 00:03:07,990
+So it looks like we're trying to get a property off of the user object before it is updated to change
+
+26
+00:03:07,990 --> 00:03:14,530
+that we can to set a conditional we're checking to see that we first have a value for our user property
+
+27
+00:03:14,820 --> 00:03:20,390
+or a user object and then include the display name property off of that.
+
+28
+00:03:20,590 --> 00:03:21,610
+So that works.
+
+29
+00:03:23,740 --> 00:03:30,070
+But this is a bit tedious to always set up a conditional for every value that we want off of the state
+
+30
+00:03:30,070 --> 00:03:33,270
+object or a property of the state object.
+
+31
+00:03:33,280 --> 00:03:39,300
+So another approach that we can take is to use a lifecycle method like component will receive props
+
+32
+00:03:39,300 --> 00:03:41,770
+or we've taken the props that we're getting
+
+33
+00:03:44,530 --> 00:03:54,370
+and set the state according to that we could set the user value to next Propst our current user.
+
+34
+00:03:54,410 --> 00:04:01,850
+So this will also work but to do this in every component in order to get the values from our global
+
+35
+00:04:01,850 --> 00:04:04,950
+state again requires a lot of code.
+
+36
+00:04:05,030 --> 00:04:09,440
+So we're going to take an alternate approach we're just going to directly set that user value and say
+
+37
+00:04:09,440 --> 00:04:15,590
+to this start Propst a current user and pass down the current user data a bit differently.
+
+38
+00:04:15,590 --> 00:04:17,030
+We're going to go to abduct Jap's
+
+39
+00:04:20,580 --> 00:04:26,490
+and this is where we're going to use the connect function to map state props to import connect from
+
+40
+00:04:26,490 --> 00:04:29,830
+reactor redux.
+
+41
+00:04:29,880 --> 00:04:35,350
+We're going to make sure that we're getting all of the values from states within one component or component
+
+42
+00:04:36,740 --> 00:04:43,820
+to add connect to the bottom of map state to prop's And here we'll just have one map state to prop's
+
+43
+00:04:44,570 --> 00:04:48,640
+function that will give us an object with all of the values that we need from our state.
+
+44
+00:04:48,770 --> 00:04:52,520
+And then just pass down the values that we need via props.
+
+45
+00:04:52,520 --> 00:04:59,960
+So first grab current user from state up user dot current user and we'll add current user as a property
+
+46
+00:05:00,740 --> 00:05:06,770
+first to our side panel which is where our user panel component lives will pass down.
+
+47
+00:05:06,830 --> 00:05:15,410
+Current User the proper current user and we'll restructure that props and our props object for at like
+
+48
+00:05:15,410 --> 00:05:21,290
+so past current user to current user problem we created for a side panel then with an assigned panel
+
+49
+00:05:21,290 --> 00:05:30,900
+we'll have his current user Propp within render we can pluck off that current user profit from this
+
+50
+00:05:30,920 --> 00:05:31,640
+stuff prop's
+
+51
+00:05:35,280 --> 00:05:42,150
+reference that is current user once again and pass that down to the user panel.
+
+52
+00:05:44,830 --> 00:05:53,770
+So now we're receiving the value for our current user directly within state via props and now.
+
+53
+00:05:53,810 --> 00:05:58,340
+But instead of setting up a conditional or using the connect function here you can just say this that
+
+54
+00:05:58,340 --> 00:06:00,020
+state that user data display name
+
+55
+00:06:05,610 --> 00:06:11,750
+can get the user name of our currently signed and user can change the trigger in our dropdown to this
+
+56
+00:06:11,940 --> 00:06:15,160
+state that user that display name as well.
+
+57
+00:06:15,860 --> 00:06:17,750
+Will save all those files.
+
+58
+00:06:20,530 --> 00:06:24,590
+If we head back to our out we can see immediately we have the name
+
+59
+00:06:27,500 --> 00:06:29,450
+of the user that's currently authenticated.
+
+60
+00:06:31,240 --> 00:06:32,710
+And both places in our dropdown
+
+61
+00:06:35,970 --> 00:06:43,580
+so passing the prop's pressing the global state down via props instead of using the connect function
+
+62
+00:06:43,730 --> 00:06:48,740
+only using the connect function in one place within our app component will provide a very convenient
+
+63
+00:06:49,190 --> 00:06:57,440
+way to pass state down to all of the components that will need to access information such as the user
+
+64
+00:06:57,440 --> 00:07:03,300
+data if we refresh again we can see that our user name is still there.
+

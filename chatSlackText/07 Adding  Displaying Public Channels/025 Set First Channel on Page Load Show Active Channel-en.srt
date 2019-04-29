@@ -1,0 +1,180 @@
+1
+00:00:00,570 --> 00:00:03,590
+Are now able to put the channel in Google say when you click on it.
+
+2
+00:00:03,930 --> 00:00:08,780
+But when we load the page we're only calling the set user action.
+
+3
+00:00:08,820 --> 00:00:12,760
+We're not putting any channel in our global state when our page loads.
+
+4
+00:00:12,780 --> 00:00:15,660
+We have to actually click on it first.
+
+5
+00:00:15,890 --> 00:00:17,150
+We want to change this behavior.
+
+6
+00:00:17,160 --> 00:00:19,820
+We want to load a channel by default.
+
+7
+00:00:20,660 --> 00:00:21,690
+When our page floats
+
+8
+00:00:24,660 --> 00:00:31,350
+we create this we begin by going to our ad listeners function and where we're setting the stage we're
+
+9
+00:00:31,350 --> 00:00:36,400
+adding the loaded channels to our channels property and say we're going to add a callback function.
+
+10
+00:00:36,540 --> 00:00:39,870
+We're going to execute a function that will create called Set first channel
+
+11
+00:00:42,590 --> 00:00:44,220
+and Secrest channel will do just that.
+
+12
+00:00:44,220 --> 00:00:49,730
+I'll take the first channel in R.A. or channels or hey and put it on global stage.
+
+13
+00:00:50,070 --> 00:00:56,150
+We'll set a conditional to say if Purslow to put a personal property in state so that initially the
+
+14
+00:00:56,150 --> 00:01:08,250
+true say if this that state that first load and this starts date that channels the length is greater
+
+15
+00:01:08,250 --> 00:01:14,460
+than zero if it's our first time loading the page and if we have more than no channels we have a channel
+
+16
+00:01:15,840 --> 00:01:22,080
+we're going to call our set current channel action and pass in the first channel.
+
+17
+00:01:22,080 --> 00:01:24,280
+And how do we get this first channel.
+
+18
+00:01:24,360 --> 00:01:35,140
+We'll just take the channels or a from this state that channels and grab the first element and set that
+
+19
+00:01:35,140 --> 00:01:36,720
+equal to the variable first channel
+
+20
+00:01:39,510 --> 00:01:50,860
+and then upon doing that we want to set the state in order to set first load to false.
+
+21
+00:01:51,020 --> 00:01:54,430
+We can say that and back to our
+
+22
+00:01:57,540 --> 00:02:03,550
+You can see now set user and current channel are being called when our page loads so now we have our
+
+23
+00:02:04,090 --> 00:02:10,540
+first channel within state and we can still change our channel to another one.
+
+24
+00:02:10,540 --> 00:02:14,060
+However we're not displaying which channel is currently active.
+
+25
+00:02:14,080 --> 00:02:16,050
+We want to change this as well.
+
+26
+00:02:16,090 --> 00:02:22,460
+We want to displayed our user which channel has been selected who will then change channel.
+
+27
+00:02:22,930 --> 00:02:29,110
+We're going to execute a function who's going to take which channel we're passing to change channel
+
+28
+00:02:29,710 --> 00:02:33,900
+in order to set the active channels or to call this action an active channel.
+
+29
+00:02:36,370 --> 00:02:47,070
+We'll simply take the channel data for the channel that's being switched to and set the state and update
+
+30
+00:02:47,470 --> 00:02:52,140
+a property on state called active channel.
+
+31
+00:02:52,250 --> 00:02:54,790
+It will just take the ID of it
+
+32
+00:02:58,100 --> 00:03:00,440
+we need to create this active channel property
+
+33
+00:03:03,650 --> 00:03:10,680
+we'll set it to an empty string initially and then back where we're iterating over our channels with
+
+34
+00:03:10,680 --> 00:03:12,440
+display channels.
+
+35
+00:03:12,860 --> 00:03:17,670
+We'll add this active prop to our menu item to compare.
+
+36
+00:03:17,830 --> 00:03:22,170
+If the channel that's currently being iterated over if it's ID is equal to this that state got active
+
+37
+00:03:22,170 --> 00:03:26,500
+channel and if it is it'll provide an active class to it and highlight it.
+
+38
+00:03:30,090 --> 00:03:31,260
+When we get back to our app
+
+39
+00:03:35,410 --> 00:03:45,170
+when our page loads and we click on a channel you'll see that we have some indication of where we're
+
+40
+00:03:45,170 --> 00:03:52,490
+currently at which channel we're on over we're not displaying it for the first half that we land on
+
+41
+00:03:52,870 --> 00:03:54,260
+if we want to change that.
+
+42
+00:03:54,290 --> 00:03:59,870
+We want to show that the current channels active when we're calling said first channel you can call
+
+43
+00:03:59,980 --> 00:04:08,520
+that active channel as well and passen first channel.
+
+44
+00:04:08,790 --> 00:04:12,660
+And with that we're now setting the channel by default.
+
+45
+00:04:13,510 --> 00:04:16,800
+When our page loads in or displaying the channel that's currently active.
+

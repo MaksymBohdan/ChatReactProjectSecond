@@ -1,0 +1,52 @@
+1
+00:00:00,390 --> 00:00:05,970
+Let's go over the tools that you'll need to have on your computer to complete this project first you'll
+
+2
+00:00:05,970 --> 00:00:06,880
+need to have installed.
+
+3
+00:00:06,900 --> 00:00:09,890
+No genius you can get that at no jast dot org.
+
+4
+00:00:10,690 --> 00:00:15,190
+And there you'll find options to download the stable version of note which is currently eight point
+
+5
+00:00:15,190 --> 00:00:15,860
+twelve.
+
+6
+00:00:16,180 --> 00:00:19,710
+For the most recent version ten point ten.
+
+7
+00:00:20,140 --> 00:00:26,890
+I'd recommend going with the stable version and it's the version that Noad recommends as well.
+
+8
+00:00:28,770 --> 00:00:34,230
+We're using firebase for a back and for our database for our storage in this application.
+
+9
+00:00:34,390 --> 00:00:40,160
+So you need to create an account with firebase that based on Google dot com and you can either do that
+
+10
+00:00:40,160 --> 00:00:43,690
+now or you can do it in the relevant section where we set up our base.
+
+11
+00:00:43,730 --> 00:00:51,420
+It's up to you and the code editor abusing which is optional of course is Visual Studio code and you
+
+12
+00:00:51,420 --> 00:00:54,640
+can grab it for free at Kodak Visual Studio dot com.
+
+13
+00:00:54,660 --> 00:00:58,070
+There you'll find options for Mac Windows or Linux computers.
+

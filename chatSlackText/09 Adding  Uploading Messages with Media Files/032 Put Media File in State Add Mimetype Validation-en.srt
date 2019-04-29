@@ -1,0 +1,208 @@
+1
+00:00:00,310 --> 00:00:06,540
+We want users in our app to click on upload media to choose an image file hit send and see their image
+
+2
+00:00:06,540 --> 00:00:09,020
+file added to their channel that they're currently on.
+
+3
+00:00:11,560 --> 00:00:17,410
+The first step to doing that within five modal is to create a state object with a file property set
+
+4
+00:00:17,410 --> 00:00:24,800
+initially to know Ladden onchange handler to our file input connected to a function called add file
+
+5
+00:00:25,450 --> 00:00:33,210
+to be able to add the file that a user selected to state this advice functional taken event and the
+
+6
+00:00:33,210 --> 00:00:36,970
+path to access that file will be event that target files.
+
+7
+00:00:37,090 --> 00:00:44,070
+This will be an array or select the first element with the index of 0 and for now let's log that value.
+
+8
+00:00:46,080 --> 00:00:50,130
+We're back in our app or click on upload media will choose an image file.
+
+9
+00:00:51,420 --> 00:00:57,100
+We can see that image file in our console we can see information about it such as its name its size
+
+10
+00:00:57,110 --> 00:00:59,900
+its type a bunch of information.
+
+11
+00:01:00,540 --> 00:01:08,120
+But instead of logging it we want this to be added to our file modal state.
+
+12
+00:01:08,300 --> 00:01:11,420
+We'll check to see if there is a value for this file variable.
+
+13
+00:01:11,420 --> 00:01:18,710
+We're going to set the state in particular the file property with the value in that variable.
+
+14
+00:01:18,890 --> 00:01:28,930
+Then on our Send button on click handler connected to this send file function that will create.
+
+15
+00:01:28,970 --> 00:01:40,100
+So whenever we hit send we execute send file and within it we'll restructure the file from state and
+
+16
+00:01:40,100 --> 00:01:48,480
+once again we'll check to make sure the file property and state is an empty and then one credit check
+
+17
+00:01:50,350 --> 00:01:58,720
+using this is authorized function that takes the file name to see if the file type or the file that
+
+18
+00:01:58,780 --> 00:02:04,660
+the user is trying to upload is authorized to perform this check at an authorized property than our
+
+19
+00:02:04,660 --> 00:02:13,950
+state object which will include an array of file types that we will allow allow file types of images.
+
+20
+00:02:13,990 --> 00:02:16,540
+So I bag and image slash PNB
+
+21
+00:02:19,760 --> 00:02:21,360
+with or is authorized function.
+
+22
+00:02:21,410 --> 00:02:29,920
+It takes the file name I'm going to use that authorizer A were just created or used the includes array
+
+23
+00:02:29,930 --> 00:02:36,930
+method to check to see if our file that's been uploaded includes that file type.
+
+24
+00:02:37,180 --> 00:02:43,190
+But in order to assist in determining that file type we'll import a tool called mime from the package
+
+25
+00:02:43,190 --> 00:02:44,550
+MIME types.
+
+26
+00:02:44,800 --> 00:02:50,630
+So MIME type or mime will perform a lookup for us using Outlook.
+
+27
+00:02:50,860 --> 00:03:00,920
+Look up the content type of the file based on its filename this I will check to see if the file that's
+
+28
+00:03:00,920 --> 00:03:10,030
+been attempted to be uploaded is of an authorized type and if it is if that returns TRUE going to create
+
+29
+00:03:10,030 --> 00:03:18,160
+this metadata object the content type property once again will use MIME to look up passen the file name
+
+30
+00:03:18,730 --> 00:03:27,220
+in order to put the content type of the file is trying to be uploaded on this meta data object.
+
+31
+00:03:27,220 --> 00:03:33,100
+And we want to pass it to a function called upload file which will take the file itself as well as this
+
+32
+00:03:33,100 --> 00:03:42,700
+metadata object upload file function as one that will create in our message form are created in the
+
+33
+00:03:42,700 --> 00:03:43,870
+parent component.
+
+34
+00:03:45,680 --> 00:03:48,070
+Upload file take file and metadata.
+
+35
+00:03:48,260 --> 00:03:53,800
+And for now we'll just lock both of those files to see that this function works.
+
+36
+00:03:54,020 --> 00:03:59,590
+And now we need to pass the function down to file modal to be used
+
+37
+00:04:04,960 --> 00:04:07,870
+passes down as the proper upload file
+
+38
+00:04:12,260 --> 00:04:21,360
+back and file model will be structure our products within sandpile grab the upload file function there
+
+39
+00:04:21,370 --> 00:04:29,590
+can execute it and we want to close our modal to also grab that from prop's upon uploading the file.
+
+40
+00:04:29,830 --> 00:04:37,270
+Then we want to clear the file went to where the file and state will create a function called Clear
+
+41
+00:04:37,270 --> 00:04:37,870
+file.
+
+42
+00:04:41,480 --> 00:04:45,780
+Ill just call that state and set the file property to No
+
+43
+00:04:48,990 --> 00:04:52,040
+now and save everything and give this a shot
+
+44
+00:04:56,190 --> 00:04:58,890
+open or cancel and then go to our re-act up towards
+
+45
+00:05:01,900 --> 00:05:12,220
+had to arc while motile we see RC With file an authorized we'll try selecting an image file
+
+46
+00:05:15,590 --> 00:05:17,090
+like the one I have in my desktop.
+
+47
+00:05:17,210 --> 00:05:24,010
+Looks like the file property was updated in state with this file object.
+
+48
+00:05:24,090 --> 00:05:28,300
+And if we click on send the modal property set to false.
+
+49
+00:05:28,340 --> 00:05:37,190
+The models are moved and we see in our console both the file that we uploaded and all of its data is
+
+50
+00:05:37,490 --> 00:05:42,680
+being logged from our upload file function as well as the meta data object.
+
+51
+00:05:43,790 --> 00:05:49,060
+And if we try clicking the send button without any image file selected we see we don't get anything
+
+52
+00:05:49,130 --> 00:05:50,160
+off to the console.
+

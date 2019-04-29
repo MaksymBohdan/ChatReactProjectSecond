@@ -1,0 +1,300 @@
+1
+00:00:00,630 --> 00:00:05,550
+Let's move on to building out our color panel and messages components will start with the color panel
+
+2
+00:00:05,610 --> 00:00:13,410
+which is on the left hand side of our side panel and within it will import a number of things from semantic
+
+3
+00:00:13,410 --> 00:00:14,100
+you react
+
+4
+00:00:17,220 --> 00:00:22,480
+or grab the sidebar menu divider and Button components.
+
+5
+00:00:22,570 --> 00:00:28,470
+So the main component will be a sidebar.
+
+6
+00:00:28,530 --> 00:00:35,210
+We want to use the as a prop to make it as the menu component that we imported will have additional
+
+7
+00:00:35,210 --> 00:00:35,840
+props.
+
+8
+00:00:36,140 --> 00:00:46,590
+I can set the labeled as was inverted vertical visible with a very thin and within the sidebar.
+
+9
+00:00:46,640 --> 00:00:55,470
+First have a divider to divide it from a button underneath with an icon of and have a size of small
+
+10
+00:00:57,130 --> 00:01:02,780
+and its color will be blue and say Will that take a look at it.
+
+11
+00:01:03,160 --> 00:01:09,960
+You can see a thin black color panel on the side with one blue button.
+
+12
+00:01:09,990 --> 00:01:11,160
+Now moving on to messages
+
+13
+00:01:13,900 --> 00:01:17,030
+Lamport from semantic UI
+
+14
+00:01:19,820 --> 00:01:27,680
+segment and comment and replace the starting to first of fragment.
+
+15
+00:01:27,850 --> 00:01:31,570
+We're going to group a number of custom components together within this fragment.
+
+16
+00:01:31,660 --> 00:01:40,730
+The first of which will be messages header component and we'll have our segment with a comment group
+
+17
+00:01:40,820 --> 00:01:41,450
+within it.
+
+18
+00:01:42,160 --> 00:01:48,790
+Which is where it will eventually put our messages and we'll give it a class name of messages this comment
+
+19
+00:01:48,790 --> 00:01:55,750
+group then underneath the segment we'll have another custom component of message form.
+
+20
+00:01:55,750 --> 00:02:01,450
+So first will create the file for our messages header within the messages folder.
+
+21
+00:02:02,140 --> 00:02:04,620
+So import react the top.
+
+22
+00:02:05,060 --> 00:02:10,040
+This will be a staple component go to the class name of messages header
+
+23
+00:02:13,400 --> 00:02:23,760
+will have its render and return and will first make sure to export it at the bottom.
+
+24
+00:02:23,940 --> 00:02:28,150
+Then at the top will bring in some components from automatic UI
+
+25
+00:02:31,880 --> 00:02:42,910
+or grab header segment and put an icon or begin into segment to group related content and we'll add
+
+26
+00:02:42,940 --> 00:02:44,100
+this clearing Propp.
+
+27
+00:02:44,320 --> 00:02:48,970
+Since we're going to be using a few floats within the segment.
+
+28
+00:02:49,000 --> 00:02:54,820
+This basically works as a clear fix when we float items to one side or another.
+
+29
+00:02:54,880 --> 00:03:01,150
+The header will have a fluid set to true will be as needed to be close to the left will give it a style
+
+30
+00:03:01,150 --> 00:03:07,240
+proc with margin bottom set to 0 and within our header here the text of channel and then to the right
+
+31
+00:03:07,240 --> 00:03:13,980
+hand side will have an icon with the name of star outline and the color for it will initially be black.
+
+32
+00:03:15,980 --> 00:03:19,490
+Will wrap the channel icon in a spam
+
+33
+00:03:22,500 --> 00:03:28,260
+and underneath the span tags will have a sub header for our header component which is where it will
+
+34
+00:03:28,260 --> 00:03:31,520
+show the number of users for a given channel.
+
+35
+00:03:31,530 --> 00:03:38,550
+For example two users are now oniony they will have another header which will be added to the right
+
+36
+00:03:41,740 --> 00:03:49,660
+so have an input and on that input give it a size of many icon will be search
+
+37
+00:03:52,570 --> 00:04:00,890
+the name will be search term and placeholder for the input will be search messages.
+
+38
+00:04:01,060 --> 00:04:07,490
+So this will be an input to search messages in a given channel and will just add a comment at the top
+
+39
+00:04:07,490 --> 00:04:13,090
+for our first hour of channel title and the second header will be channel search and put
+
+40
+00:04:18,820 --> 00:04:25,680
+the now back in messages we're going to import messages header from the same Polder
+
+41
+00:04:30,530 --> 00:04:35,850
+and now moving on to our message form create a new file for that and our messages folder
+
+42
+00:04:39,310 --> 00:04:46,090
+are again will import reac is again will be stateful.
+
+43
+00:04:46,350 --> 00:04:52,740
+The class message form extends react or component render return or export it
+
+44
+00:05:01,570 --> 00:05:04,180
+at the top will import from semantic UI.
+
+45
+00:05:05,800 --> 00:05:09,490
+Segment button and input
+
+46
+00:05:12,290 --> 00:05:15,220
+will begin with the segment again.
+
+47
+00:05:15,620 --> 00:05:23,870
+Give it a class name of message underscore underscore form within the segment of an input.
+
+48
+00:05:24,240 --> 00:05:29,180
+Here's where we'll be adding new messages to a given channel proper fluid.
+
+49
+00:05:29,250 --> 00:05:41,470
+The name of message style profit margin bottom set to zero point seven times a label which will include
+
+50
+00:05:41,950 --> 00:05:49,550
+a button which will have an icon of ADD or put the label to the left hand side.
+
+51
+00:05:51,340 --> 00:05:53,060
+The placeholder for the input will be.
+
+52
+00:05:53,060 --> 00:05:58,840
+Write your message then underneath the input will have a button.
+
+53
+00:05:58,830 --> 00:06:05,890
+Group will have a couple of buttons which will have proper icon and the width of two
+
+54
+00:06:09,440 --> 00:06:13,690
+so first button will have an orange color.
+
+55
+00:06:13,800 --> 00:06:14,860
+The content for it.
+
+56
+00:06:14,910 --> 00:06:22,970
+The text on the button will be ad reply and the label position will be left where the icon which will
+
+57
+00:06:22,970 --> 00:06:24,040
+be added.
+
+58
+00:06:24,500 --> 00:06:25,480
+Then the next button
+
+59
+00:06:28,320 --> 00:06:33,700
+in addition to being able to add or apply are going to have a button that will allow us to upload some
+
+60
+00:06:33,700 --> 00:06:41,740
+media with the color of green content of upload media or label position where the icon is right and
+
+61
+00:06:41,740 --> 00:06:43,190
+the icon is cloud.
+
+62
+00:06:43,240 --> 00:06:53,760
+Upload and once again with messages will import our component of message form from the same folder.
+
+63
+00:06:55,120 --> 00:07:02,460
+Well say that now we can see the basic structure of our messages component.
+
+64
+00:07:03,100 --> 00:07:06,640
+Now as you notice things are a bit stacked at the top.
+
+65
+00:07:08,180 --> 00:07:15,890
+We need to add a new section in our app that see as file first for our messages class with the height
+
+66
+00:07:15,980 --> 00:07:24,540
+of 440 pixels and overflow y of scroll.
+
+67
+00:07:24,540 --> 00:07:30,120
+This will be for our messages area where we can look at all the messages for a given channel then will
+
+68
+00:07:30,120 --> 00:07:33,480
+have a message form section with message.
+
+69
+00:07:33,560 --> 00:07:40,680
+Underscore under-perform the position of fixed and set to important.
+
+70
+00:07:40,930 --> 00:07:48,500
+The bottom for it will be 1 m margin left will be 320 pixels and important as well.
+
+71
+00:07:50,500 --> 00:07:56,910
+The left will be set to zero right one m and z index 200.
+
+72
+00:07:57,770 --> 00:08:00,910
+So it appears in front of everything else.
+
+73
+00:08:01,380 --> 00:08:02,210
+Say that.
+
+74
+00:08:02,210 --> 00:08:10,370
+Now I can see our messages area takes up much greater height and our message form takes up the majority
+
+75
+00:08:10,370 --> 00:08:11,690
+of the remaining with.
+

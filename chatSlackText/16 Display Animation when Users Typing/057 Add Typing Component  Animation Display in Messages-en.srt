@@ -1,0 +1,124 @@
+1
+00:00:00,440 --> 00:00:07,680
+Now move on to our Taiping animation for either of the users that are currently typing in a given channel
+
+2
+00:00:08,530 --> 00:00:15,590
+we'll create a typing component within our messages folder or first or import react.
+
+3
+00:00:15,590 --> 00:00:19,500
+This will be a seamless functional component.
+
+4
+00:00:21,450 --> 00:00:31,180
+Or we'll have a typing do with the class of typing which will contain three divs with the class of typing
+
+5
+00:00:31,210 --> 00:00:42,130
+underscore underscore dot at the end will export our typing component and then at the bottom of that
+
+6
+00:00:42,580 --> 00:00:54,100
+CSSA create a new area or a typing component or first we'll have a user typing class or font style or
+
+7
+00:00:54,120 --> 00:01:02,860
+be set to a taluk what we will be bold and it'll have a margin right of three pixels.
+
+8
+00:01:03,100 --> 00:01:10,420
+So this will be the text NextEra animation the typing class will have with five M's a height of Tooms
+
+9
+00:01:11,430 --> 00:01:21,010
+a position of relative padding of 10 pixels margin marked five pixels of background.
+
+10
+00:01:21,360 --> 00:01:28,770
+But the tax code U-6 E-6 E6 a border radius of 20 pixels
+
+11
+00:01:32,190 --> 00:01:34,910
+and our typing got class.
+
+12
+00:01:35,050 --> 00:01:45,550
+We floated to the left will have a width of eight pixels a height of 8 pixels a margin of zero and four
+
+13
+00:01:45,550 --> 00:01:50,880
+pixels in the background color of 8.
+
+14
+00:01:51,170 --> 00:02:01,820
+The eight see nine one a border radius of 50 percent and opacity of zero and all create an animation
+
+15
+00:02:03,380 --> 00:02:09,610
+with the name loading Faid will be 1 seconds and will be an infinite animation.
+
+16
+00:02:09,840 --> 00:02:16,920
+We're going to select the first typing class with the aunt and child selector will select the first
+
+17
+00:02:16,920 --> 00:02:22,580
+typing up by passing that one will have an animation delay of zero.
+
+18
+00:02:22,590 --> 00:02:31,600
+The second typing class will have a delay of two seconds and the third delay of point four seconds.
+
+19
+00:02:31,710 --> 00:02:38,070
+So the animation for each dot will be slightly offset to create or animation that keyframes with the
+
+20
+00:02:38,070 --> 00:02:44,230
+name of loading fade at zero percent the opacity of the animation will be zero.
+
+21
+00:02:45,130 --> 00:02:58,640
+That's 50 percent will have opacity of zero point eight and at 100 percent it will go back to zero.
+
+22
+00:02:58,650 --> 00:03:08,830
+So now in our messages component we'll make sure to import our typing components from outside typing.
+
+23
+00:03:10,630 --> 00:03:20,110
+And then to display it just to preview this will go within our common group or will create a span of
+
+24
+00:03:20,110 --> 00:03:24,080
+the class team of user underscore underscore typing.
+
+25
+00:03:24,330 --> 00:03:32,070
+And just as some sample text will say Douglass's typing include the typing component to the right hand
+
+26
+00:03:32,070 --> 00:03:39,400
+side and or at both the span and the typing component with a div with a style prompt with the style
+
+27
+00:03:39,400 --> 00:03:47,880
+rules display at the flex line item set to center and this will center our span and our typing components.
+
+28
+00:03:48,670 --> 00:03:49,840
+Along the y axis
+
+29
+00:03:52,550 --> 00:03:55,130
+so now you can see the text and our typing animation.
+
+30
+00:03:55,130 --> 00:04:00,420
+So this is what will be shown for any user that's typing within the same channel that we're currently
+
+31
+00:04:00,420 --> 00:04:00,590
+in.
+

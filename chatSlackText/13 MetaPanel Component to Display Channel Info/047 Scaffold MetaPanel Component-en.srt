@@ -1,0 +1,244 @@
+1
+00:00:00,420 --> 00:00:06,030
+Now let's go out our panel component which will include information about the channel that users currently
+
+2
+00:00:06,030 --> 00:00:08,290
+on.
+
+3
+00:00:08,320 --> 00:00:16,690
+I had to the Minute panel file then are met a Panel folder import some components from semantic UI grab
+
+4
+00:00:16,870 --> 00:00:27,670
+segment accordion header and icon who use an accordion component here will be within a segment component
+
+5
+00:00:28,710 --> 00:00:29,850
+and first will have our header.
+
+6
+00:00:29,860 --> 00:00:31,470
+It'll be at age 3.
+
+7
+00:00:31,780 --> 00:00:41,510
+We attached to the top of the segment and we'll have the text about hashmarks and the channel name which
+
+8
+00:00:41,510 --> 00:00:48,090
+will display dynamically in a bit then we'll have our accordion component will be styled with a style
+
+9
+00:00:48,110 --> 00:00:54,160
+prop and attached as well by setting the attached prop to true.
+
+10
+00:00:55,190 --> 00:00:59,690
+And within our accordion component we have a number of segments each of which will be conditionally
+
+11
+00:00:59,690 --> 00:01:01,410
+shown when we click on the title.
+
+12
+00:01:01,730 --> 00:01:10,040
+So when you click on this first accordion title if the active index is zero and that's the index we're
+
+13
+00:01:10,040 --> 00:01:15,680
+going to give this part of the accordion if active index is zero it'll be active it will display the
+
+14
+00:01:15,680 --> 00:01:18,710
+content associated with the title that we're creating.
+
+15
+00:01:18,710 --> 00:01:27,280
+So add an active index property to state said initially 0 will restructure it within Rander.
+
+16
+00:01:27,500 --> 00:01:33,620
+So each of these tidal areas as well as their related content will have a given index and we'll add
+
+17
+00:01:33,620 --> 00:01:39,440
+an unclick to each of them if we click on a title we're going to set the active index and therefore
+
+18
+00:01:39,440 --> 00:01:46,180
+display the part of the accordion with an index of a certain value.
+
+19
+00:01:46,220 --> 00:01:52,010
+So two active index we're passing event and title prop's which will give us access to the index that
+
+20
+00:01:52,010 --> 00:01:55,550
+we set on the title.
+
+21
+00:01:55,580 --> 00:02:03,140
+So if we click on a certain part of the accordion we'll grab the index from the title props are passing
+
+22
+00:02:03,140 --> 00:02:08,660
+is that active index and also grab active index from St..
+
+23
+00:02:08,730 --> 00:02:16,790
+We're going to update active index with a variable called new index if active index is equal to the
+
+24
+00:02:16,790 --> 00:02:18,740
+index on our total props.
+
+25
+00:02:18,970 --> 00:02:24,350
+We get the value of negative 1 otherwise the index that's being passed when we click a given part of
+
+26
+00:02:24,350 --> 00:02:30,290
+the accordion and which will set new index to the active index it will update it and show that part
+
+27
+00:02:30,440 --> 00:02:38,290
+of the according with the given index value that we're setting in St. and within the title we're going
+
+28
+00:02:38,290 --> 00:02:44,410
+to put an icon first with the name of dropdown will be present within every accordion title that we
+
+29
+00:02:44,410 --> 00:02:45,650
+have in our accordion.
+
+30
+00:02:45,760 --> 00:02:52,710
+And then we'll add our own custom icon with the name of info here on this part of the accordion.
+
+31
+00:02:52,710 --> 00:02:56,930
+We're going to have channel details that we set for each channel
+
+32
+00:02:59,800 --> 00:03:05,690
+and then as I mentioned we'll have the content related to a given title to display those according to
+
+33
+00:03:05,690 --> 00:03:13,600
+the active index value will need to ground the active Prah that we supplied to the accordion title for
+
+34
+00:03:13,640 --> 00:03:17,480
+active index is being compared with zero.
+
+35
+00:03:17,570 --> 00:03:24,360
+And for now we'll just give our content the text of details we'll copy both the title and content and
+
+36
+00:03:24,360 --> 00:03:30,660
+paste another segment to the accordion underneath where will then change the index to one and compare
+
+37
+00:03:30,660 --> 00:03:33,050
+active index to one here.
+
+38
+00:03:33,090 --> 00:03:35,840
+Change the icon to user circle.
+
+39
+00:03:35,960 --> 00:03:42,720
+And our second icon this will be the area for our top posters and here with the accordion content we'll
+
+40
+00:03:42,720 --> 00:03:49,740
+compare active index with one again and then in the next segment that we'll paste and we'll compare
+
+41
+00:03:49,740 --> 00:03:53,540
+active index with to have an index of two Nikon a pencil.
+
+42
+00:03:53,640 --> 00:03:57,410
+Alternate the text will be created by within the title
+
+43
+00:04:01,270 --> 00:04:06,250
+compare active in text to within the accordion content.
+
+44
+00:04:06,420 --> 00:04:10,660
+The active prop and we'll just give it the full text of Creator for now.
+
+45
+00:04:12,190 --> 00:04:17,170
+So now we have our accordion we can toggle between different segments of it and we can see the default
+
+46
+00:04:17,170 --> 00:04:21,430
+text that we put in each area.
+
+47
+00:04:21,430 --> 00:04:26,340
+But now we want to hide the metal panel whenever we click on a direct messages channel.
+
+48
+00:04:26,350 --> 00:04:32,740
+We only want to see the metal panel to give us the user information whenever we click on a new public
+
+49
+00:04:32,740 --> 00:04:33,440
+channel.
+
+50
+00:04:33,700 --> 00:04:34,950
+So we're going after Jesus.
+
+51
+00:04:35,080 --> 00:04:37,850
+We're going to pass down and is private channel.
+
+52
+00:04:38,290 --> 00:04:46,870
+The value is private channel to our metal panel as we know we need to give it a key so that it renders
+
+53
+00:04:46,870 --> 00:04:55,580
+properly we give it a key with the current channel ID by first making sure we have a current channel
+
+54
+00:04:55,580 --> 00:04:58,840
+value and will receive that
+
+55
+00:05:01,660 --> 00:05:07,350
+in our state panel panel set the state property to private channel
+
+56
+00:05:11,220 --> 00:05:15,710
+and within render if we're currently in a private channel
+
+57
+00:05:18,800 --> 00:05:23,230
+and we can also restructure that from state if we're on a private channel.
+
+58
+00:05:23,230 --> 00:05:26,040
+We want to return not we want to return nothing.
+
+59
+00:05:28,240 --> 00:05:28,870
+We'll save that
+
+60
+00:05:31,690 --> 00:05:36,790
+and I'll try navigating to a direct messages channel and you can see that the Metapad goes away but
+
+61
+00:05:36,850 --> 00:05:39,790
+appears once again whenever we go back to a public channel.
+

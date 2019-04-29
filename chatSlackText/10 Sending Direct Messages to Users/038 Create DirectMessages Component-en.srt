@@ -1,0 +1,104 @@
+1
+00:00:00,390 --> 00:00:04,140
+Now it's great the structure for a direct message is component which will be underneath our channels
+
+2
+00:00:04,140 --> 00:00:09,300
+component that all allow users to send messages directly to other users.
+
+3
+00:00:11,220 --> 00:00:16,840
+Within side panel and component direct messages on their channels.
+
+4
+00:00:19,290 --> 00:00:21,670
+Create a file for it in the side panel folder.
+
+5
+00:00:24,990 --> 00:00:28,830
+Over the top will import react.
+
+6
+00:00:28,830 --> 00:00:33,590
+This will be a staple component of all those classic direct messages
+
+7
+00:00:36,650 --> 00:00:43,200
+will have its return and render well make sure to export it at the bottom.
+
+8
+00:00:43,480 --> 00:00:49,740
+That's where a default will import it within side panel.
+
+9
+00:00:49,740 --> 00:00:50,520
+Before we forget
+
+10
+00:00:55,030 --> 00:00:56,340
+and will be in the same folder
+
+11
+00:01:03,640 --> 00:01:08,350
+and our direct messages the structure of the component will look very similar to how we structured our
+
+12
+00:01:08,740 --> 00:01:14,800
+channels component import menu icon from semantic UI
+
+13
+00:01:18,180 --> 00:01:22,730
+and our main component will be menu menu with the class name of menu
+
+14
+00:01:26,640 --> 00:01:29,210
+and it will contain a menu item.
+
+15
+00:01:29,380 --> 00:01:39,130
+Once again with this span an icon within it with the name mail.
+
+16
+00:01:39,320 --> 00:01:48,420
+The text in all caps of direct messages include our curly braces and our coats with a space in between
+
+17
+00:01:48,430 --> 00:01:55,660
+to space it from our parentheses which will include the length of the number of channels that will have
+
+18
+00:01:55,930 --> 00:02:01,390
+and will designate that with this user's property within state.
+
+19
+00:02:01,460 --> 00:02:10,480
+Will the structure users then render the number of direct messages channels with users not link.
+
+20
+00:02:10,510 --> 00:02:17,390
+Then I don't eat the menu item include a comment or tell us later that's where it will iterate over
+
+21
+00:02:17,390 --> 00:02:24,470
+the users that will be able to send direct messages to and back channels.
+
+22
+00:02:24,520 --> 00:02:32,130
+You'll notice that we had a style prop on the menu setting Padam padding bottom to two homes or replace
+
+23
+00:02:32,150 --> 00:02:38,350
+that with the class name of menu and within after CSSA will create that Menu class
+
+24
+00:02:43,890 --> 00:02:50,190
+so this menu class will be within our side panel.
+
+25
+00:02:50,390 --> 00:02:57,090
+No just give it a roll where we set padding bottom to two m's.
+
+26
+00:02:57,100 --> 00:03:00,700
+Now we have the basic structure for our Direct Messages component.
+

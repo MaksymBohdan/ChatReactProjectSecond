@@ -1,0 +1,236 @@
+1
+00:00:00,900 --> 00:00:10,480
+Whenever a chat loads or whenever we reload the page we see within our messages area a blank area until
+
+2
+00:00:10,480 --> 00:00:12,100
+our messages are loaded.
+
+3
+00:00:12,100 --> 00:00:14,140
+So this isn't a very good user experience.
+
+4
+00:00:14,140 --> 00:00:20,380
+We want to tell our user that our messages are in the process of being loaded and we can do that with
+
+5
+00:00:20,380 --> 00:00:25,810
+this message as loading property that we're setting in the state and our messages component.
+
+6
+00:00:25,840 --> 00:00:32,230
+So as our messages are being loaded We'll show this skeleton component that will create within it this
+
+7
+00:00:32,290 --> 00:00:40,820
+will be a seamless functional component and it'll first contain a div with a class of skeleton within
+
+8
+00:00:40,820 --> 00:00:45,640
+the div will have a number of issues with their own respective classes.
+
+9
+00:00:45,670 --> 00:00:54,040
+First with the class of Scott and Avatar next day with the class of Skelton author and then I did with
+
+10
+00:00:54,040 --> 00:01:03,250
+the class of skells and details for export a skeleton component and then we'll head to Atlanta DSS and
+
+11
+00:01:03,250 --> 00:01:06,100
+create the rules for each of these classes.
+
+12
+00:01:07,260 --> 00:01:10,860
+We're going to section that we'll call skeleton dodgiest.
+
+13
+00:01:11,000 --> 00:01:12,780
+So begin with the skeleton class
+
+14
+00:01:16,360 --> 00:01:22,860
+this main class will have a position of relative overflow set to a hidden it'll have a height of 40
+
+15
+00:01:22,860 --> 00:01:32,230
+pixels and margin bottom of 10 pixels and we'll give it a pseudo element of after for additional styling
+
+16
+00:01:33,610 --> 00:01:42,680
+with a content set to an empty string that displayed a block or give it a position of absolute top will
+
+17
+00:01:42,680 --> 00:01:49,920
+be set to zero left zero with 50 percent a height of 100 percent
+
+18
+00:01:53,750 --> 00:02:00,800
+and will animate it with this sweep animation which will last two seconds and will be an infinite animation
+
+19
+00:02:01,850 --> 00:02:09,290
+and will include a background image which will be a linear gradient the values to left transparent and
+
+20
+00:02:09,290 --> 00:02:17,020
+R-Ga. of the five 255 255 and opacity of 0.4 and final value of transparent
+
+21
+00:02:21,350 --> 00:02:27,950
+and Ozalp a keyframes with the name of Swee as the name of the animation suggests will slowly sweep
+
+22
+00:02:27,950 --> 00:02:35,390
+it across the skeleton div first by putting the animation on the far left hand side of the div so that
+
+23
+00:02:35,390 --> 00:02:41,390
+0 percent will give it a translate X of a negative 100 percent at 50 percent of the animation.
+
+24
+00:02:41,420 --> 00:02:48,080
+When it's halfway through we'll set translate X to 150 percent sweep it over to the far right of the
+
+25
+00:02:48,080 --> 00:02:54,820
+div and then at 100 percent or term translate X back to negative 100 percent.
+
+26
+00:02:56,690 --> 00:03:04,620
+So this animation will take place over the course of two seconds and within our skeleton div will have
+
+27
+00:03:04,870 --> 00:03:13,290
+her skeleton Avatar class with a height of 35 pixels with 35 pixels a border radius of three pixels
+
+28
+00:03:13,560 --> 00:03:21,510
+a background color of R-GA fifty fifty seven fifty seven and opacity of 0.3.
+
+29
+00:03:21,510 --> 00:03:26,910
+So this will be the outline of the avatar for a given message.
+
+30
+00:03:29,290 --> 00:03:34,300
+For Skelton author class it will have the same background color value.
+
+31
+00:03:34,550 --> 00:03:37,250
+So we can copy that.
+
+32
+00:03:37,300 --> 00:03:46,330
+It will have a with of 120 pixels a height of 10 pixels a border radius of three pixels.
+
+33
+00:03:47,980 --> 00:03:53,760
+Position will be set to absolute will give it a bottom of thirty pixels.
+
+34
+00:03:56,230 --> 00:04:03,020
+Aleft of 40 pixels and a rate of zero.
+
+35
+00:04:03,220 --> 00:04:04,770
+Then for a skeleton details
+
+36
+00:04:08,390 --> 00:04:16,010
+we'll give it a background color of the same value as Skilton author and skells an avatar a height of
+
+37
+00:04:16,010 --> 00:04:19,410
+20 pixels border radius of three pixels.
+
+38
+00:04:19,730 --> 00:04:20,220
+Position.
+
+39
+00:04:20,230 --> 00:04:29,190
+Absolute again or bottom will be set to five pixels left forty pixels right.
+
+40
+00:04:29,300 --> 00:04:30,510
+Twenty pixels.
+
+41
+00:04:35,070 --> 00:04:41,920
+And now we'll head back to messages and we'll make sure to import our skeleton component.
+
+42
+00:04:42,570 --> 00:04:49,950
+So with the skeleton component as the name suggests it provides a kind of outline for each of our messages
+
+43
+00:04:50,130 --> 00:04:57,150
+that are being loaded to describe to our user beforehand what they'll see in the UI.
+
+44
+00:04:57,180 --> 00:05:04,410
+So now within render we can structure messages loading from our state object and within common group
+
+45
+00:05:05,010 --> 00:05:14,160
+or comment group component will execute a new function called display messages skeleton and more passed
+
+46
+00:05:14,160 --> 00:05:26,560
+down messages loading to this function so if messages loading is set to true and will pass it to display
+
+47
+00:05:26,560 --> 00:05:29,990
+messages gotten as loading.
+
+48
+00:05:30,320 --> 00:05:35,640
+If loading is true we're going to display first re-act fragment.
+
+49
+00:05:36,170 --> 00:05:41,330
+And since the Skelton component represents one message being loaded but we don't want to display just
+
+50
+00:05:41,330 --> 00:05:47,060
+one skeleton but a number of them to fill up the messages section.
+
+51
+00:05:47,060 --> 00:05:53,180
+We can use a trick where we use the array constructor passed a value of 10 to get 10 elements spread
+
+52
+00:05:53,180 --> 00:05:55,420
+that result into a new array.
+
+53
+00:05:55,430 --> 00:06:02,270
+Use the map method or we only use the index parameter in the return.
+
+54
+00:06:02,360 --> 00:06:07,410
+We return our skeleton we're now iterating over a skeleton component 10 times.
+
+55
+00:06:07,670 --> 00:06:14,870
+We'll give it a key proc set equal to I which is why we're using it and the map function and if floating
+
+56
+00:06:14,870 --> 00:06:17,660
+set to false if we're not loading any messages we're going to return.
+
+57
+00:06:17,670 --> 00:06:19,910
+No from display message skeleton.
+
+58
+00:06:20,270 --> 00:06:26,450
+So now enter AFP as our messages are being loaded with display Skelton component.
+
+59
+00:06:26,990 --> 00:06:33,670
+The show uses the outline of each of the messages before they're actually displayed in the UI.
+

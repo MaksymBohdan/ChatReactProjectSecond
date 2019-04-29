@@ -1,0 +1,52 @@
+1
+00:00:00,570 --> 00:00:05,430
+We added our first message to our messages collection in our database where we didn't clear the text
+
+2
+00:00:05,730 --> 00:00:07,700
+in our input upon adding it.
+
+3
+00:00:09,330 --> 00:00:14,070
+So to clear that value whenever we add a new message or make our input and our messages form a controlled
+
+4
+00:00:14,070 --> 00:00:22,800
+input are passed on the value from our message property is being updated to our input component with
+
+5
+00:00:22,860 --> 00:00:24,260
+the value prop
+
+6
+00:00:28,560 --> 00:00:37,910
+or also disable or button upon adding a new message by setting the disabled prop to the loading value
+
+7
+00:00:37,980 --> 00:00:43,810
+of loading said to true it will disable our button while our messages message is being added.
+
+8
+00:00:43,840 --> 00:00:46,650
+So the structure loading from state as well.
+
+9
+00:00:47,140 --> 00:00:54,980
+So now when we clear our message property and state upon adding the message will also clear the text
+
+10
+00:00:54,990 --> 00:00:57,400
+that's within the input as well.
+
+11
+00:00:57,870 --> 00:01:03,720
+So now when we add our apply the text and the inputs queered our button is disabled for a split second.
+
+12
+00:01:03,730 --> 00:01:05,270
+Upon adding the reply.
+
+13
+00:01:05,840 --> 00:01:09,170
+And we have another new message within our database.
+

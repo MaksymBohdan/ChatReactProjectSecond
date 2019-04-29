@@ -1,0 +1,152 @@
+1
+00:00:00,750 --> 00:00:05,790
+Now that we've created the set user action as was our global state when we're authenticated and then
+
+2
+00:00:05,790 --> 00:00:11,920
+redirected from log into our app component our user data is put on our global state.
+
+3
+00:00:12,210 --> 00:00:17,680
+But since state updates are asynchronous and take a certain amount of time to resolve.
+
+4
+00:00:18,060 --> 00:00:24,690
+We're past the maps date to prop's function as the first argument to our connect function to get loading
+
+5
+00:00:24,690 --> 00:00:29,550
+data from our state object to see when the set user action is still being loaded.
+
+6
+00:00:31,570 --> 00:00:39,220
+We want to get the loading property and this will be located on our user property of state.
+
+7
+00:00:39,280 --> 00:00:46,090
+So the path of that will be state DOT user dot is loading and then maps it to prop's in mind the typo
+
+8
+00:00:46,210 --> 00:00:53,300
+should be maps to prop's going to return an object which will have a property name of exploding in our
+
+9
+00:00:53,300 --> 00:01:01,110
+path of state that user is loading to get the current value of that we can log the exploding property
+
+10
+00:01:01,690 --> 00:01:04,160
+has the name of the function suggests on our prop's object.
+
+11
+00:01:04,320 --> 00:01:06,880
+So we can do that with this type prop's that is loading.
+
+12
+00:01:06,910 --> 00:01:14,840
+You can see the current value of is loading when our route component is being mounted you can see within
+
+13
+00:01:14,840 --> 00:01:19,490
+our console when the components mounted it is true.
+
+14
+00:01:19,490 --> 00:01:27,500
+So in order to prevent our user from seeing a blank screen as this set user actions being executed we're
+
+15
+00:01:27,500 --> 00:01:32,270
+going to set up a ternary in our return statement and a check to see if this that process is loading
+
+16
+00:01:32,270 --> 00:01:32,780
+is true.
+
+17
+00:01:32,780 --> 00:01:36,450
+And if it is if it's still loading we're going to show a spinner component.
+
+18
+00:01:36,470 --> 00:01:42,750
+Otherwise we're going to show our app route and our app component.
+
+19
+00:01:43,160 --> 00:01:51,740
+So we'll create a spinner component within our source folder called spin or not Jarius import re-act
+
+20
+00:01:51,760 --> 00:01:53,360
+up at the top.
+
+21
+00:01:53,360 --> 00:01:58,810
+Integrate the spinner will use the loader component from Symantec.
+
+22
+00:01:58,810 --> 00:02:03,340
+You react.
+
+23
+00:02:03,430 --> 00:02:09,160
+This will be a status functional component with the same name of spinner and immediately return the
+
+24
+00:02:09,160 --> 00:02:13,510
+loader component well make sure to export it at the bottom
+
+25
+00:02:17,160 --> 00:02:20,390
+and we can set a number of props on this loader component.
+
+26
+00:02:20,430 --> 00:02:26,610
+First of all we can set the size or set that to huge and we can provide some text underneath that with
+
+27
+00:02:26,620 --> 00:02:34,410
+the content prop will provide the text of preparing chat and tell our users exactly what's taking place
+
+28
+00:02:36,580 --> 00:02:41,870
+then we import within an index such as spinner from dot slash spinner
+
+29
+00:02:45,170 --> 00:02:46,970
+and save both of those files.
+
+30
+00:02:47,680 --> 00:02:50,280
+If we head back to our app
+
+31
+00:02:53,280 --> 00:02:56,510
+we don't see anything.
+
+32
+00:02:56,610 --> 00:03:01,070
+So it looks like our spinner wasn't working when in fact it was working.
+
+33
+00:03:01,320 --> 00:03:05,730
+We were displaying it to our users while the action was being resolved.
+
+34
+00:03:05,880 --> 00:03:07,020
+We just couldn't see it.
+
+35
+00:03:07,020 --> 00:03:13,770
+So to make it visible will bring in the dimmer component to surround the loader component and this will
+
+36
+00:03:13,770 --> 00:03:20,520
+provide a dark background to our loader and give it the prop of active.
+
+37
+00:03:20,570 --> 00:03:26,420
+So now we reload the page we can see our loader and our text of preparing chat as our set user action
+
+38
+00:03:26,420 --> 00:03:27,440
+is being resolved.
+

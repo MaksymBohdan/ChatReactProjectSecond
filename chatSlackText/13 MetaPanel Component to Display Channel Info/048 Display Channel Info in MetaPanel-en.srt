@@ -1,0 +1,140 @@
+1
+00:00:00,450 --> 00:00:05,900
+Now we want to display channel information in each of the accordion segments that we created.
+
+2
+00:00:07,390 --> 00:00:14,980
+And we want to do that as we change the channel so we want to provide dynamically to them at a panel.
+
+3
+00:00:14,980 --> 00:00:23,150
+Information about the current channel so passed down current channel information as prox dramatic channel
+
+4
+00:00:23,150 --> 00:00:29,300
+component and more set that in state as the property name channel will do structure that our state object
+
+5
+00:00:29,750 --> 00:00:37,160
+and first within the header will grab channel don't name the channel name and we can channel details
+
+6
+00:00:37,490 --> 00:00:42,960
+where the accordion content we will just output channel about details.
+
+7
+00:00:44,210 --> 00:00:50,160
+The posters will cover that in the later section for our top posters and then in the last accordion
+
+8
+00:00:50,160 --> 00:00:57,120
+segment where we want to display who created a given channel will first use an image component which
+
+9
+00:00:57,120 --> 00:01:08,190
+will grab from semantic UI and we're going to set the source of that to channel that created by.
+
+10
+00:01:09,200 --> 00:01:17,150
+Avatar can get the user's avatar created the channel and then underneath that or add the name channel
+
+11
+00:01:17,150 --> 00:01:20,570
+that created by that name will save both of those files.
+
+12
+00:01:23,570 --> 00:01:29,720
+And when we head back to our app we don't get anything because we're getting this error can't read property
+
+13
+00:01:29,720 --> 00:01:31,240
+name of no.
+
+14
+00:01:31,350 --> 00:01:38,850
+So it takes a certain amount of time for in our global state the channel data to be said.
+
+15
+00:01:38,850 --> 00:01:43,800
+So we want to set up a conditional where if we don't have a channel we're going to return NULL just
+
+16
+00:01:43,800 --> 00:01:46,550
+like we did with private channel.
+
+17
+00:01:46,560 --> 00:01:52,170
+So then as the channel data is put on global state we get information about it.
+
+18
+00:01:52,200 --> 00:02:01,530
+We get our channel details and we get are created by user and their avatar and name now another way
+
+19
+00:02:01,530 --> 00:02:02,700
+of handling this.
+
+20
+00:02:02,730 --> 00:02:08,640
+Waiting for a channel to come in is will remove the conditional and instead of returning all will a
+
+21
+00:02:08,640 --> 00:02:10,700
+loading prop to our segment.
+
+22
+00:02:10,980 --> 00:02:17,610
+So if we don't have any channel data we'll say not channel will provide a loading spinner to the entire
+
+23
+00:02:18,360 --> 00:02:25,710
+segment and then for each data each piece of data that we're getting will set up a conditional rule.
+
+24
+00:02:25,710 --> 00:02:36,180
+First make sure that we have channel data with say channel and then use the double and operator to display
+
+25
+00:02:36,750 --> 00:02:38,830
+the property on the channel.
+
+26
+00:02:38,970 --> 00:02:42,000
+We'll do that for each of those dynamic values that we added.
+
+27
+00:02:42,000 --> 00:02:44,080
+So now we can see this loading spinner.
+
+28
+00:02:44,910 --> 00:02:46,650
+And as our channel data comes in
+
+29
+00:02:49,580 --> 00:02:54,580
+will refresh the page one more time so you can see that we're getting a floating splinter over the entire
+
+30
+00:02:54,580 --> 00:02:55,470
+metal panel.
+
+31
+00:02:58,560 --> 00:03:06,120
+And then as a last step or add a component to the last segment and put in the username and image into
+
+32
+00:03:06,120 --> 00:03:11,090
+that does the format be created by information a bit better.
+
+33
+00:03:11,100 --> 00:03:19,860
+I'll set this as an H3 set an image prop of circular on the image component.
+
+34
+00:03:19,860 --> 00:03:26,250
+So now if we take a look at our created by segment we can see that the user name is a bit bigger and
+
+35
+00:03:26,940 --> 00:03:30,780
+the Avatar where the creator is now circular.
+

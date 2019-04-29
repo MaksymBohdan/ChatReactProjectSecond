@@ -1,0 +1,164 @@
+1
+00:00:00,270 --> 00:00:06,480
+Let's build up the basic structure for our component go to after jazz and remove the art class as well
+
+2
+00:00:06,480 --> 00:00:11,210
+as the component import from react or change to a stateless functional component.
+
+3
+00:00:13,600 --> 00:00:17,570
+And it will have one component from semantic you I react.
+
+4
+00:00:17,590 --> 00:00:24,780
+The great component include a set of grid tags and within the grid will have a number of custom components
+
+5
+00:00:25,710 --> 00:00:34,330
+will have a color panel component side panel component messages component and finally a metal panel
+
+6
+00:00:34,330 --> 00:00:35,170
+component.
+
+7
+00:00:37,110 --> 00:00:39,430
+Will create a folder or a color panel
+
+8
+00:00:42,980 --> 00:00:51,710
+which will include a color panel component the top will import reacts.
+
+9
+00:00:51,720 --> 00:00:59,090
+This will be a stateful component so it will be class color panel sends re-act up component will have
+
+10
+00:00:59,090 --> 00:01:01,040
+our render and return.
+
+11
+00:01:01,070 --> 00:01:02,730
+Now we'll just return to Divx.
+
+12
+00:01:03,060 --> 00:01:06,560
+The text of color panel and then export it
+
+13
+00:01:10,230 --> 00:01:11,530
+can copy all of this markup
+
+14
+00:01:14,990 --> 00:01:21,710
+and we'll create our next folder within the components folder side panel with its corresponding component
+
+15
+00:01:21,710 --> 00:01:27,520
+side panel and paste all that in all the markup be copied.
+
+16
+00:01:27,630 --> 00:01:32,620
+Change the class the side panel the text the side panel and the export side panel
+
+17
+00:01:37,020 --> 00:01:49,990
+will do the same for our messages component will include file of messages pasted in our markup
+
+18
+00:01:52,780 --> 00:01:54,240
+and change the class name.
+
+19
+00:01:55,780 --> 00:02:03,150
+The text in the export will have one final folder metal panel
+
+20
+00:02:06,690 --> 00:02:10,740
+with a component of the same name placed in the markup
+
+21
+00:02:13,620 --> 00:02:15,410
+so the class met a panel.
+
+22
+00:02:16,130 --> 00:02:24,240
+The text that met a panel and export the component within Apple import.
+
+23
+00:02:24,400 --> 00:02:33,100
+Each of these components then their respective folders color panel from color panel side panel from
+
+24
+00:02:34,440 --> 00:02:35,910
+side panel slash side panel
+
+25
+00:02:39,880 --> 00:02:42,250
+messages from messages slash messages
+
+26
+00:02:46,250 --> 00:02:51,860
+a panel from a panel slash panel and save all those files.
+
+27
+00:02:51,860 --> 00:02:55,750
+Take a look at our app component.
+
+28
+00:02:55,750 --> 00:02:59,010
+You can see the components are lined up next to one another.
+
+29
+00:02:59,020 --> 00:03:02,960
+Now we'll use grid to organize the components a bit better.
+
+30
+00:03:03,060 --> 00:03:10,040
+Set the comms to equal class the movie app and I'll give it a style prop with the background rule set
+
+31
+00:03:10,040 --> 00:03:11,240
+to the Texaco Tripoli
+
+32
+00:03:13,920 --> 00:03:16,440
+now will leave the color panel inside panel off to the side.
+
+33
+00:03:16,440 --> 00:03:22,100
+They won't have their own call or wrap messages and met a panel in a set of grid column tags
+
+34
+00:03:25,140 --> 00:03:30,870
+for messages we want to offset it from color panel inside panel by giving it a style Propp
+
+35
+00:03:35,860 --> 00:03:40,400
+and that will include a rule where a margin lapped reset to 320 pixels.
+
+36
+00:03:44,000 --> 00:03:45,830
+I will do the same with a metal panel
+
+37
+00:03:50,800 --> 00:03:58,760
+wrap it in Grid column tags will give it a width of four.
+
+38
+00:03:58,770 --> 00:04:04,170
+Now since semantic UI uses a 16 point grid system this means that the metal panel column will take up
+
+39
+00:04:04,980 --> 00:04:12,370
+with the fourth of the page with we save that file.
+
+40
+00:04:12,470 --> 00:04:18,140
+Take a look at our out you can see the basic structure that each of our components within our chat will
+
+41
+00:04:18,140 --> 00:04:18,470
+have.
+

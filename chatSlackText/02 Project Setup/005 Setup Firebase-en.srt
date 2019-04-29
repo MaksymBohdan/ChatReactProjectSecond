@@ -1,0 +1,140 @@
+1
+00:00:00,510 --> 00:00:03,640
+Are going to be using firebase is the back end and databased our project.
+
+2
+00:00:03,660 --> 00:00:08,040
+Now firebase is a great choice for us since we're making a chat after we want users to be able to see
+
+3
+00:00:08,280 --> 00:00:13,890
+new messages in real time and firebase is what's known as a real time database it makes use of a technology
+
+4
+00:00:13,890 --> 00:00:17,360
+called web sockets in order to make data transfer very fast.
+
+5
+00:00:17,580 --> 00:00:22,450
+So we'll create an account with firebase of the fire based at Google dot com and we'll click on.
+
+6
+00:00:22,590 --> 00:00:24,840
+Once you've signed up go to a.
+
+7
+00:00:24,870 --> 00:00:27,480
+We've taken the con. The fire based at Google dot com.
+
+8
+00:00:27,630 --> 00:00:34,410
+We want to add a project by clicking on and project include our project name.
+
+9
+00:00:34,410 --> 00:00:37,200
+I'll give mine the name of re-act slack clone.
+
+10
+00:00:39,200 --> 00:00:50,590
+And you'll be asked to agree to their terms so quick the checkbox and click on Create project far based
+
+11
+00:00:50,590 --> 00:00:58,210
+on our create our project once our project is ready will click on the Continue button and will be taken
+
+12
+00:00:58,210 --> 00:01:05,620
+to a kind of admin panel for our project will begin by underneath the line get started by adding firebase
+
+13
+00:01:05,620 --> 00:01:13,780
+to your app will click on this code icon will give us some instructions and data will use to integrate
+
+14
+00:01:13,810 --> 00:01:19,440
+firebase with our web app underneath the Initialize firebase comment.
+
+15
+00:01:19,480 --> 00:01:27,010
+Want to grab both the Conficker object as well as the function call firebase start initialize app which
+
+16
+00:01:27,160 --> 00:01:34,640
+takes that config object or copy all that back to our app.
+
+17
+00:01:34,820 --> 00:01:40,250
+We're going to add a new file within our source folder for all of this and we copy it.
+
+18
+00:01:40,340 --> 00:01:46,850
+We're going to call this firebase dumb ass or pace that write in.
+
+19
+00:01:47,150 --> 00:01:52,880
+And since we're making use of firebase here and we're calling initialized app with all the configuration
+
+20
+00:01:53,060 --> 00:01:59,620
+data we're going to import firebase from firebase slash app
+
+21
+00:02:03,370 --> 00:02:08,070
+and we're going to import a few other packages as well.
+
+22
+00:02:08,100 --> 00:02:08,940
+Say So.
+
+23
+00:02:09,140 --> 00:02:16,540
+So dependencies I should say will import firebase slash off or authorization within our app
+
+24
+00:02:19,610 --> 00:02:30,310
+firebase slash database make use of the realtime database firebase flash storage Chole allow us to store
+
+25
+00:02:30,310 --> 00:02:31,620
+things like media files
+
+26
+00:02:37,040 --> 00:02:42,980
+at the very bottom we'll export firebase with export default.
+
+27
+00:02:43,460 --> 00:02:51,920
+To make that available to other parts of our app and if you'll notice the storage bucket property that
+
+28
+00:02:52,050 --> 00:03:01,120
+has an empty string we want to set up our firebase storage we'll go over to the storage tab in the left
+
+29
+00:03:01,120 --> 00:03:11,350
+hand side and in that page will click on get started or show some default security rules for our storage
+
+30
+00:03:11,710 --> 00:03:12,590
+to say.
+
+31
+00:03:12,700 --> 00:03:13,290
+Got it.
+
+32
+00:03:14,880 --> 00:03:25,100
+And from here we want to grab the URL up of the top after the G-S Ford slash forward slash that you
+
+33
+00:03:25,130 --> 00:03:27,230
+all that ends with Spot dot com.
+
+34
+00:03:27,510 --> 00:03:33,550
+Paste it directly into our storage bucket property to set up firebase storage.
+
+35
+00:03:33,600 --> 00:03:38,420
+Now I can save that file and start making use of firebase within our re-act.
+

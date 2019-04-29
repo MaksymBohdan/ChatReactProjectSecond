@@ -1,0 +1,296 @@
+1
+00:00:01,080 --> 00:00:05,910
+Now when we click on the color picker mode or we want to be able to choose a color and then hit save
+
+2
+00:00:06,010 --> 00:00:12,380
+colors to create a new option within our color panel or the colors of our app.
+
+3
+00:00:12,600 --> 00:00:17,610
+So within a color panel component will bring in the segment component.
+
+4
+00:00:17,890 --> 00:00:25,170
+We're going to use this to wrap both of our labels and slighter pickers for primary color and secondary
+
+5
+00:00:25,170 --> 00:00:29,650
+color within our modal content area.
+
+6
+00:00:31,760 --> 00:00:41,210
+And on each of these segments we'll set a proper inverted so you can see the text of the label.
+
+7
+00:00:41,440 --> 00:00:48,790
+And then within our state we'll add a couple of properties one called primary and said to a string and
+
+8
+00:00:48,850 --> 00:00:51,490
+one of secondary.
+
+9
+00:00:51,490 --> 00:00:59,680
+So we want to use an onchange handler or both of the slider picker's and our first on change will be
+
+10
+00:00:59,680 --> 00:01:09,270
+set equal to a function handle change primary and the second or reference Hindle change secondary.
+
+11
+00:01:09,300 --> 00:01:14,670
+So first create Hindol change primary and sort of passing through an event we have access to the color
+
+12
+00:01:14,670 --> 00:01:15,420
+itself.
+
+13
+00:01:15,630 --> 00:01:22,030
+So we have this color object and it has a hex property on it.
+
+14
+00:01:22,170 --> 00:01:28,700
+We can get the hex code of the color that we selected with the primary color picker and we can modify
+
+15
+00:01:28,700 --> 00:01:36,620
+handle change primary to it'll change secondary to use the hex property of color to update the secondary
+
+16
+00:01:36,620 --> 00:01:38,040
+color and state as well.
+
+17
+00:01:39,510 --> 00:01:49,430
+Once we save that we will open our reactive tools we'll go to our caller panel component.
+
+18
+00:01:50,070 --> 00:01:56,200
+And when we pull up the state and we select a color for primary and secondary we can see that they're
+
+19
+00:01:56,280 --> 00:02:03,120
+updated in our seat object but the slider isn't moving to the part of the picture that we're selecting.
+
+20
+00:02:03,330 --> 00:02:08,970
+This is because we're not passing the values from primary and secondary and state back down to our slider
+
+21
+00:02:08,970 --> 00:02:10,350
+picker components.
+
+22
+00:02:10,410 --> 00:02:15,660
+So we need to make both of our slider picker's control components bypassing primary and secondary down
+
+23
+00:02:15,660 --> 00:02:20,720
+to the color prop on our respective slider pickers.
+
+24
+00:02:22,610 --> 00:02:31,490
+So now when we do that save our file and try updating the colors in our state again we bring up the
+
+25
+00:02:31,490 --> 00:02:34,530
+color panel open the model.
+
+26
+00:02:34,550 --> 00:02:42,710
+We can now change the area of the slider that we're selecting and the hex code that's attached to the
+
+27
+00:02:42,710 --> 00:02:46,680
+primary and secondary values and state.
+
+28
+00:02:46,730 --> 00:02:53,420
+We could also set primary and secondary to initial value since we're making these controlled components
+
+29
+00:02:54,650 --> 00:02:59,870
+and display by default a certain part of the slider picker for example the green and purple colors like
+
+30
+00:02:59,870 --> 00:03:05,330
+we have selected here and upon saving our colors by clicking on the colors.
+
+31
+00:03:05,330 --> 00:03:11,300
+But we want to create a color property for our currently authenticated user which will contain an array
+
+32
+00:03:11,300 --> 00:03:16,700
+of unique IDs and on them will be information about the colors that we chose.
+
+33
+00:03:16,700 --> 00:03:24,860
+The primary color with its corresponding hex code and the secondary color with that tax code.
+
+34
+00:03:24,860 --> 00:03:30,140
+So Koehler's will be a new property on our user object and our users collection
+
+35
+00:03:35,490 --> 00:03:38,860
+and to implement this will head back to our color panel
+
+36
+00:03:42,620 --> 00:03:52,310
+and go and on click to our saved colors by referencing a Hindol save colour's function which will create
+
+37
+00:03:55,220 --> 00:04:01,300
+so handles colors will first have a little bit of validation to make sure that we have values for both
+
+38
+00:04:01,990 --> 00:04:07,300
+the primary color and the secondary color and state will say if this does it are primary and this not
+
+39
+00:04:07,300 --> 00:04:16,270
+state DOT secondary and to set up this validation will remove the colors the tax codes that were previously
+
+40
+00:04:16,270 --> 00:04:20,270
+set for primary and secondary.
+
+41
+00:04:20,610 --> 00:04:26,220
+And if we have values for both primary and secondary will execute a function called Saved colors
+
+42
+00:04:29,290 --> 00:04:33,490
+and we can pass the primary value and secondary value
+
+43
+00:04:36,370 --> 00:04:37,380
+to safe colors.
+
+44
+00:04:39,890 --> 00:04:47,270
+No call them primary and secondary and we want to reach out to firebase and in particular we want to
+
+45
+00:04:47,270 --> 00:04:54,590
+use the user's ref you select a particular user will need to import firebase
+
+46
+00:05:00,450 --> 00:05:01,570
+then using the users or
+
+47
+00:05:04,560 --> 00:05:07,020
+we want to add a child
+
+48
+00:05:09,700 --> 00:05:13,760
+with the current user ID.
+
+49
+00:05:14,580 --> 00:05:20,880
+We need to have a user property in state referencing this not perhaps a current user and then pass our
+
+50
+00:05:20,880 --> 00:05:22,280
+current user data down.
+
+51
+00:05:25,710 --> 00:05:26,580
+To our caller Paymah
+
+52
+00:05:31,860 --> 00:05:33,310
+will do that and after chance
+
+53
+00:05:37,080 --> 00:05:46,690
+and once again will provide a key and will provide a somewhat unique identifier with current user name.
+
+54
+00:05:46,720 --> 00:05:50,180
+You'll notice that we are to use current user id for the side panel.
+
+55
+00:05:50,260 --> 00:05:57,400
+However we're sharing the same key value for a panel in messages so we'll change the key value to current
+
+56
+00:05:57,400 --> 00:06:02,610
+channel that name for the metal panel we want each of our components to have a different key value.
+
+57
+00:06:02,650 --> 00:06:07,930
+So we don't have any problems with passing down props or with rendering each of the components.
+
+58
+00:06:07,930 --> 00:06:13,390
+Now we can reference the caller's property for a user or push a unique identifier onto this new property
+
+59
+00:06:13,810 --> 00:06:20,440
+and we'll use the update method to push an object with both the primary and secondary colors which we're
+
+60
+00:06:20,440 --> 00:06:30,850
+getting from the parameters of safe colors and then again and then statement we're going to log colors
+
+61
+00:06:30,850 --> 00:06:31,540
+added.
+
+62
+00:06:31,540 --> 00:06:37,550
+If that's successful we're going to close the model and then catch any errors.
+
+63
+00:06:39,560 --> 00:06:48,310
+With catch Erl just use a console air.
+
+64
+00:06:48,420 --> 00:06:58,530
+Now as we say that and test out saving our first set of colors will open the modal and pick a couple
+
+65
+00:06:58,530 --> 00:06:59,500
+of colors.
+
+66
+00:07:02,290 --> 00:07:10,610
+A couple of particular shades of a given color will hit safe colors and looks like we're getting an
+
+67
+00:07:10,610 --> 00:07:20,840
+error we're trying to provide a path of object objects flash colors within our saved colors function.
+
+68
+00:07:20,840 --> 00:07:24,860
+So this needs to be the start state or user id slash colors
+
+69
+00:07:29,570 --> 00:07:30,790
+themselves try this again.
+
+70
+00:07:32,660 --> 00:07:34,930
+Pick another set of colors
+
+71
+00:07:38,680 --> 00:07:39,450
+then we'll hit say
+
+72
+00:07:42,540 --> 00:07:43,570
+we take a look at our log.
+
+73
+00:07:43,590 --> 00:07:50,900
+We see that the colors were added or motile was closed and now we're currently authenticated user.
+
+74
+00:07:50,940 --> 00:07:57,480
+We have a code property with a unique ID and the colors that we chose saved as keys primary and secondary.
+

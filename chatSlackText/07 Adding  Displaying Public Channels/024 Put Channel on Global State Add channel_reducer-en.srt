@@ -1,0 +1,188 @@
+1
+00:00:00,270 --> 00:00:07,800
+When we click on a channel we log the information about it but ideally we want to click on a channel
+
+2
+00:00:07,860 --> 00:00:18,360
+and put the channel information on global state on its own property and state to do so will first create
+
+3
+00:00:18,360 --> 00:00:20,900
+a new function called change channel
+
+4
+00:00:23,930 --> 00:00:26,790
+to accept the channel that we're clicking on
+
+5
+00:00:30,480 --> 00:00:37,610
+and we want to fire in action when we call this function with the name set current channel which takes
+
+6
+00:00:37,610 --> 00:00:45,860
+the channel data and puts the channel data on global state or place the console log within our display
+
+7
+00:00:45,860 --> 00:00:50,050
+channels function with change channel
+
+8
+00:00:53,640 --> 00:00:55,680
+and create this action.
+
+9
+00:00:55,790 --> 00:01:03,010
+We're setting the current channel in our redux state for first hand to the types file in our actions
+
+10
+00:01:03,010 --> 00:01:09,160
+folder and first we created some user action types.
+
+11
+00:01:09,160 --> 00:01:17,410
+Now we're going to create a set of channel action types.
+
+12
+00:01:17,620 --> 00:01:21,940
+First Channel action type we give them the same name of set current channel
+
+13
+00:01:27,290 --> 00:01:28,720
+and within our index
+
+14
+00:01:32,330 --> 00:01:36,930
+once again separate our user actions from our channel actions.
+
+15
+00:01:37,580 --> 00:01:41,450
+And so be interacting with a different part of our global state.
+
+16
+00:01:43,670 --> 00:01:54,010
+Export function called current channel looks up channel data no return an object with the type from
+
+17
+00:01:54,080 --> 00:02:02,690
+action types of said current channel our payload will consist of a property called current channel or
+
+18
+00:02:02,690 --> 00:02:04,930
+we'll put the channel data on it.
+
+19
+00:02:07,810 --> 00:02:15,670
+So within our reducers we're going to create a new reducer and sort of this user reducer which put information
+
+20
+00:02:15,670 --> 00:02:21,240
+on the user property of say we're going to create a channel producer for our channel data alone we'll
+
+21
+00:02:21,250 --> 00:02:30,760
+take the state and the action and I'll set up some initial state to call this object initial channel
+
+22
+00:02:30,760 --> 00:02:37,210
+state or initial channel state or consist of a current channel property set to no will have no channel
+
+23
+00:02:37,600 --> 00:02:45,850
+selected initially no set or state as the default value initial channels the default value of our state
+
+24
+00:02:46,980 --> 00:02:52,110
+will set up a switch statement or switching based on the type of the action.
+
+25
+00:02:52,420 --> 00:02:58,930
+And in the case that we have Bissette current channel action type or return an object in which we spread
+
+26
+00:02:59,020 --> 00:03:07,090
+all the initial values of the state and only change the current channel property of it according to
+
+27
+00:03:07,210 --> 00:03:15,630
+action that payload that current channel with the channel data that's coming in.
+
+28
+00:03:16,270 --> 00:03:24,610
+I made one small error with the clear user case we want to spread the state and not the initial user
+
+29
+00:03:24,640 --> 00:03:32,050
+state and in the default case for our channel producer we want to just return the state if we don't
+
+30
+00:03:32,050 --> 00:03:33,970
+have a match for any case.
+
+31
+00:03:36,430 --> 00:03:43,460
+We'll put the results of the Channel producer within combined reducers to a new property channel.
+
+32
+00:03:43,780 --> 00:03:49,330
+So all of our channel data will exist on this channel property of global state and back within channels
+
+33
+00:03:49,390 --> 00:03:53,390
+we can use our set current channel action.
+
+34
+00:03:53,470 --> 00:04:03,950
+We just need to import the connect function from re-act redux up with a top and then import the action
+
+35
+00:04:03,950 --> 00:04:05,930
+that we want to use so that current channel
+
+36
+00:04:14,580 --> 00:04:20,120
+and since we're importing that up at the top we also need to connect
+
+37
+00:04:23,020 --> 00:04:24,820
+and wrap our component with it.
+
+38
+00:04:25,360 --> 00:04:34,240
+Well said Matthysse to props to know and the structure or action from Matt dispatched to prop's.
+
+39
+00:04:34,770 --> 00:04:42,410
+So we'll save all of our files back in our app.
+
+40
+00:04:42,590 --> 00:04:49,020
+We take a look at our read ex-state.
+
+41
+00:04:49,580 --> 00:04:55,010
+Take a look at our state object you see that we have this new channel property with the sole property
+
+42
+00:04:55,010 --> 00:04:56,560
+of current channel set to know.
+
+43
+00:04:56,670 --> 00:05:02,100
+And if we click on the channel you can see that it's populated with our channel data.
+
+44
+00:05:02,150 --> 00:05:04,820
+So we're putting our channel data now on mobile state
+
+45
+00:05:08,490 --> 00:05:11,970
+if we select the other channel that we have.
+
+46
+00:05:11,970 --> 00:05:18,330
+You can see we get its channel data as well so able to switch between channels and alternatively put
+
+47
+00:05:18,630 --> 00:05:21,150
+the respective channel data on local state.
+

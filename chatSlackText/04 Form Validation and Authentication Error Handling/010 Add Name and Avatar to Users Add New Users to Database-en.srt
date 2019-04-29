@@ -1,0 +1,272 @@
+1
+00:00:00,690 --> 00:00:06,120
+When we register new users we know that we get back some automatically created user data from firebase
+
+2
+00:00:06,780 --> 00:00:08,060
+for the purposes of our app.
+
+3
+00:00:08,070 --> 00:00:15,910
+We want to change some of these values that we register a new user and take a look at that user object.
+
+4
+00:00:16,710 --> 00:00:19,150
+You see first that display name is set to nil.
+
+5
+00:00:19,220 --> 00:00:23,460
+We want to use display name to store the user's username in or out.
+
+6
+00:00:23,510 --> 00:00:25,690
+Also photo you are out set to know.
+
+7
+00:00:25,700 --> 00:00:29,330
+This is where you want to store the user's avatar image.
+
+8
+00:00:29,330 --> 00:00:35,810
+So back in the gun statement we're registering our user or comment out said state and take the created
+
+9
+00:00:35,810 --> 00:00:43,760
+user object and on the user property we have this update profile method which will use to give display
+
+10
+00:00:43,760 --> 00:00:46,880
+name the value of the user name input.
+
+11
+00:00:48,230 --> 00:00:57,400
+And pass a Eurail to photo euro or get an avatar from Gravatar dot com slash Avatar.
+
+12
+00:00:57,400 --> 00:01:05,020
+And then we will imports a function called M.D 5 from the package M.D 5.
+
+13
+00:01:05,040 --> 00:01:12,090
+Now M.D 5 is usually used to hash messages we'll be using it to create a unique value to provide to
+
+14
+00:01:12,090 --> 00:01:22,140
+the Gravatar dot com slash Avatar your L and all take the user email from created user that user dot
+
+15
+00:01:22,170 --> 00:01:31,320
+email and it's a unique value as required by firebase pass it to M.D 5 and then after we interpret this
+
+16
+00:01:31,320 --> 00:01:39,810
+value we'll add questionmark d equals Identica on to get a avatar image generated for each new user
+
+17
+00:01:40,800 --> 00:01:49,780
+Wow the then statement after that and within then or sets date and are loading property to False.
+
+18
+00:01:49,830 --> 00:01:52,380
+After that we'll catch any errors in the catch block.
+
+19
+00:01:53,790 --> 00:02:03,130
+As well as those errors and state by concatenating onto the arrows array the air that we're getting
+
+20
+00:02:03,730 --> 00:02:05,620
+as well as loading to false there
+
+21
+00:02:09,240 --> 00:02:11,720
+will save all that.
+
+22
+00:02:11,840 --> 00:02:15,470
+We'll head back to our out and we'll try registering a new user
+
+23
+00:02:19,660 --> 00:02:22,630
+and we'll take a look at the user data that comes back from firebase
+
+24
+00:02:29,220 --> 00:02:38,250
+as we can see we have display name set to the user guy that we provided and in 40 we should have an
+
+25
+00:02:38,250 --> 00:02:44,100
+avatar image with our Gravatar dot com you are el.
+
+26
+00:02:44,310 --> 00:02:48,560
+If we save this object as a global variable in our consul
+
+27
+00:02:51,430 --> 00:02:54,100
+then we access the Hodo Ural path
+
+28
+00:02:56,950 --> 00:03:04,100
+we copy that link and open it in a new town should be able to see our avatar image that was generated
+
+29
+00:03:04,100 --> 00:03:05,050
+by Gravatar
+
+30
+00:03:07,850 --> 00:03:13,430
+And now that we're adding a user name and Avatar to the user that's just been registered.
+
+31
+00:03:14,450 --> 00:03:18,660
+Within the then statement we're setting the loading property of state to False.
+
+32
+00:03:18,780 --> 00:03:26,300
+We're going to instead call function save user repassing the created user and added then block we're
+
+33
+00:03:27,050 --> 00:03:30,530
+in the body we're just going to log users saved.
+
+34
+00:03:32,170 --> 00:03:39,120
+So as the then indicates this will be a promise and only panel submit will create or save user function
+
+35
+00:03:39,760 --> 00:03:48,470
+it'll take created user and it won't save user to save the users that we're registering to our database.
+
+36
+00:03:48,470 --> 00:03:53,480
+So back in our firebase console click on the database tab on the left hand side and I'll scroll down
+
+37
+00:03:53,480 --> 00:03:58,670
+to where we have the option for real time database will click on Create database.
+
+38
+00:03:58,850 --> 00:04:04,400
+We want to start in test mode to allow all reads and writes for the time being then click on unable
+
+39
+00:04:05,600 --> 00:04:09,510
+to set up or firebase database.
+
+40
+00:04:09,670 --> 00:04:18,620
+We can click on this plus button and we can take a look at what this collection will look like for our
+
+41
+00:04:18,620 --> 00:04:19,670
+users.
+
+42
+00:04:20,060 --> 00:04:26,480
+We'll have an array of users for every new user that registers will have a unique ID for them.
+
+43
+00:04:26,660 --> 00:04:32,720
+And on that ID we're going to include information about the user that just registered their display
+
+44
+00:04:32,720 --> 00:04:41,500
+name value their name that they provided as well as their photo euro which will be Gravatar accomplish
+
+45
+00:04:41,500 --> 00:04:43,060
+something.
+
+46
+00:04:43,510 --> 00:04:50,200
+And so it will look something like this or will have the users collection an array of users with their
+
+47
+00:04:50,200 --> 00:04:56,080
+unique IDs and within them their specific information.
+
+48
+00:04:56,090 --> 00:05:02,920
+But we'll delete that sample collection and go back to our code editor to actually implement that
+
+49
+00:05:06,060 --> 00:05:06,910
+who save user.
+
+50
+00:05:06,920 --> 00:05:18,160
+We're going to return a user's or is going to need to create a users of property and state.
+
+51
+00:05:18,200 --> 00:05:23,990
+Is going to reference the collection that we just took a look at will be at the path firebase start
+
+52
+00:05:24,010 --> 00:05:31,080
+database that ran with a string of users or this all reference that collection of data where all of
+
+53
+00:05:31,080 --> 00:05:32,180
+our users will be added
+
+54
+00:05:37,090 --> 00:05:42,250
+and we can put a child piece of data on it with the child method.
+
+55
+00:05:42,360 --> 00:05:49,910
+We want to put their I.D. and we'll get that with created user data user ID if you're interested in
+
+56
+00:05:49,910 --> 00:05:54,820
+taking a look at what that is when we get our user information back upon registering.
+
+57
+00:05:55,010 --> 00:06:01,470
+We have this unique ID value at the very bottom of the user object.
+
+58
+00:06:01,490 --> 00:06:06,820
+That's what we're going to be setting as a child and our users collection and our database.
+
+59
+00:06:07,070 --> 00:06:16,730
+And we're going to use the set method to set an object on that unique ID for our user not have a name
+
+60
+00:06:16,730 --> 00:06:23,390
+property which will reference the user name and created user that user that display name and an avatar
+
+61
+00:06:23,390 --> 00:06:29,530
+property created user to user dot photo euro.
+
+62
+00:06:29,660 --> 00:06:35,780
+The two things that we just set on our user data object will save that
+
+63
+00:06:40,510 --> 00:06:43,730
+we'll try registering another user
+
+64
+00:06:50,720 --> 00:06:53,490
+submit.
+
+65
+00:06:54,080 --> 00:07:00,320
+We can see our user data created by firebase our users saved log that we provided to the then statement
+
+66
+00:07:00,330 --> 00:07:08,450
+after executing our save user function and updating the profile of the created user.
+
+67
+00:07:08,820 --> 00:07:16,230
+So if we head back to our database we see this new users collection with a unique ID for the newly created
+
+68
+00:07:16,230 --> 00:07:19,870
+user as a child and the user's Avatar and name within.
+

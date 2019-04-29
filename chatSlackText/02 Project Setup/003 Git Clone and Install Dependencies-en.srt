@@ -1,0 +1,84 @@
+1
+00:00:00,690 --> 00:00:07,500
+Let's grab all the files that we need for our project to do so we'll go to the Euro get abduct com slash
+
+2
+00:00:08,140 --> 00:00:17,700
+read Barber slash re-act dash slack dash clone that contain all of the starting files that we'll need
+
+3
+00:00:18,060 --> 00:00:23,710
+for our act up as well as all the necessary dependencies for our project to grab these.
+
+4
+00:00:23,910 --> 00:00:25,310
+We'll click on the cloner download burn.
+
+5
+00:00:25,350 --> 00:00:28,070
+You can download all the files here as a zip file.
+
+6
+00:00:29,140 --> 00:00:32,480
+When set of that will be cloning them onto our computer.
+
+7
+00:00:32,530 --> 00:00:38,770
+Click on the clipboard icon and we'll go to our terminal or go to my code editor's since it has an integrated
+
+8
+00:00:38,770 --> 00:00:39,850
+terminal.
+
+9
+00:00:39,850 --> 00:00:45,790
+And if you're using VS code you can get control and then the till the button in order to open that can
+
+10
+00:00:45,790 --> 00:00:54,100
+also get a view of the top and then click on terminal and from here we want to select the folder where
+
+11
+00:00:54,100 --> 00:00:55,530
+we want our project to live in.
+
+12
+00:00:55,540 --> 00:01:02,030
+So all CD into that folder or CD onto my desktop and then we'll run get clone paste and the you are
+
+13
+00:01:02,050 --> 00:01:07,750
+all that we copied by clicking on the clipboard icon and then hit enter.
+
+14
+00:01:07,760 --> 00:01:09,590
+We take a look at that directory.
+
+15
+00:01:09,620 --> 00:01:15,800
+We should see the folder new folder that was added a reac slack clone or just drag that into my code
+
+16
+00:01:15,800 --> 00:01:18,610
+editor to load all the files within it.
+
+17
+00:01:20,900 --> 00:01:26,550
+And once you've done that we will then install all of the dependencies listed within the package that
+
+18
+00:01:26,550 --> 00:01:29,430
+Jason File by running NPM install.
+
+19
+00:01:29,430 --> 00:01:31,440
+Or you can just use the shortcut NPM I
+
+20
+00:01:35,100 --> 00:01:39,930
+upon running this will have a node modules folder that contains all of our dependencies and we'll be
+
+21
+00:01:39,930 --> 00:01:44,070
+able to start up and begin building our re-act application.
+

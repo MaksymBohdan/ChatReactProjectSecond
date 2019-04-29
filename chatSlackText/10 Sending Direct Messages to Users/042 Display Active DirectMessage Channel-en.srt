@@ -1,0 +1,56 @@
+1
+00:00:00,660 --> 00:00:06,330
+Now just like in our channels component we're giving an active class to the active channel that we've
+
+2
+00:00:06,330 --> 00:00:07,310
+selected.
+
+3
+00:00:07,310 --> 00:00:12,150
+We want to do the same with our direct messages so we can see which direct messages channel that we're
+
+4
+00:00:12,150 --> 00:00:12,530
+on.
+
+5
+00:00:15,020 --> 00:00:19,900
+To do so within our direct messages state we'll have an active channel property
+
+6
+00:00:23,830 --> 00:00:31,960
+and then within change channel We'll update that property depending on the channel that we're changing
+
+7
+00:00:31,960 --> 00:00:40,780
+to that we're clicking on by calling that active channel passing in the User ID and will create that
+
+8
+00:00:40,810 --> 00:00:50,430
+active channel which takes the user id and sets the state sets the active channel property that we just
+
+9
+00:00:50,430 --> 00:00:53,350
+created with the user id
+
+10
+00:00:57,880 --> 00:01:07,500
+then will from our state object the structure active channel from render and add an active prop to a
+
+11
+00:01:07,500 --> 00:01:15,270
+menu item that we are iterating over or we'll compare the user id with the active channel value and
+
+12
+00:01:15,270 --> 00:01:17,880
+state will say that
+
+13
+00:01:21,660 --> 00:01:24,080
+if we click on indirect direct messages channel.
+
+14
+00:01:24,120 --> 00:01:31,260
+Now we see a visual indication in our side panel of which direct messages channel that were on.
+

@@ -1,0 +1,400 @@
+1
+00:00:00,450 --> 00:00:06,300
+Now we want to display the sets of colors that a user has picked and saved using the color picker model
+
+2
+00:00:06,480 --> 00:00:07,280
+and our color panel
+
+3
+00:00:10,760 --> 00:00:17,030
+to do that will first add a component that amount to set up a listener role check to see if we have
+
+4
+00:00:17,030 --> 00:00:23,850
+a value for our user property in St. will create an add listener function.
+
+5
+00:00:24,160 --> 00:00:33,810
+In fact all executed with the user id value will create this function which takes the user id or will
+
+6
+00:00:33,820 --> 00:00:35,920
+first create a variable called user colors.
+
+7
+00:00:35,950 --> 00:00:43,620
+So this equal to an empty array will take the user Xref selects a child which will reference the user
+
+8
+00:00:43,620 --> 00:00:48,240
+id slash colors and get everything on the caller's property.
+
+9
+00:00:50,100 --> 00:00:58,660
+Then we'll add an event of child added and then the snap callback will collect all of the user colors
+
+10
+00:00:58,900 --> 00:01:06,160
+that a given user has selected and put them onto the beginning of the array using the upshift method
+
+11
+00:01:07,450 --> 00:01:09,190
+and pass the Snap's value.
+
+12
+00:01:10,770 --> 00:01:18,840
+So if we log collected into our user colors array we see we only have one set of colors so far in that
+
+13
+00:01:18,840 --> 00:01:19,380
+array.
+
+14
+00:01:22,010 --> 00:01:25,360
+But this is the first step to displaying them.
+
+15
+00:01:25,380 --> 00:01:32,630
+Next thing we need to do is set state will set a user colour's property and state to update user colors
+
+16
+00:01:32,630 --> 00:01:37,180
+from an empty array to the colors that we collect with our child added event.
+
+17
+00:01:37,340 --> 00:01:47,450
+Then we can render or pull off user colors from St. and we'll create a function display user colors
+
+18
+00:01:48,500 --> 00:01:57,710
+and pass user colors array to it displays or colors will take the colors a riddle first check to see
+
+19
+00:01:57,710 --> 00:01:59,240
+that the length is greater than zero.
+
+20
+00:01:59,270 --> 00:02:01,790
+To see that we have colors.
+
+21
+00:02:03,260 --> 00:02:13,770
+And our map over the array are for each color we're going to display it in a fragment.
+
+22
+00:02:14,560 --> 00:02:21,700
+We're going to pull off the index of the color we're iterating over and set it as the key on the fragment
+
+23
+00:02:22,020 --> 00:02:30,300
+or first add a divider component then do the classic color container within that.
+
+24
+00:02:30,490 --> 00:02:34,270
+Now the div the classic color square
+
+25
+00:02:38,580 --> 00:02:41,040
+and within that class of color overlay
+
+26
+00:02:43,740 --> 00:02:53,070
+this color square div will have a background style set to colored up primary the primary color that
+
+27
+00:02:53,070 --> 00:02:59,770
+we've set for a given pair of colors and color overlay.
+
+28
+00:02:59,770 --> 00:03:05,220
+We have a background set to color dot secondary.
+
+29
+00:03:05,330 --> 00:03:13,550
+So now we want to style a kind of custom icon to display both of our colors within after DSS will create
+
+30
+00:03:13,550 --> 00:03:23,740
+a section for color panel that Jesus will begin with the color container and this will have a position
+
+31
+00:03:23,740 --> 00:03:26,450
+relative in overflow.
+
+32
+00:03:26,470 --> 00:03:38,990
+Hidden a weight of 35 pixels a border radius of three pixels around it a bit.
+
+33
+00:03:39,130 --> 00:03:50,760
+Then we'll have a color Square class with it with 35 pixels a height of 35 pixels then four color overlay.
+
+34
+00:03:53,410 --> 00:04:06,680
+We'll have a width of 85 pixels a height of 35 pixels and transform set to rotate 225 degrees these
+
+35
+00:04:06,680 --> 00:04:14,700
+styles that we applied to each of the classes will allow us to create a kind of icon a square icon that's
+
+36
+00:04:14,700 --> 00:04:21,880
+rounded and includes both of the colors as triangles adjacent to one another.
+
+37
+00:04:21,970 --> 00:04:28,910
+So it's clear that we want to update the colors with the colors displayed in this icon Ladden on quick
+
+38
+00:04:28,910 --> 00:04:35,830
+to the color container div and we want to execute an action called set colors which will create
+
+39
+00:04:39,080 --> 00:04:41,110
+and will put this on multiple lines.
+
+40
+00:04:41,560 --> 00:04:50,210
+I mean line arrow function so that we can pass through the arguments colored primary and colored secondary.
+
+41
+00:04:50,240 --> 00:04:55,600
+So you want to set these colors on global state.
+
+42
+00:04:56,330 --> 00:05:01,890
+So create within our types file a colors action types section.
+
+43
+00:05:01,910 --> 00:05:07,320
+We're going to have our first type of set colors that equal to a string of the same name.
+
+44
+00:05:07,430 --> 00:05:18,060
+Then in our index file of actions we'll create a color actions area where we will have our set colors
+
+45
+00:05:18,060 --> 00:05:18,800
+action.
+
+46
+00:05:18,890 --> 00:05:28,750
+It will take in the primary color and a secondary color for our app it's going to return a type of action
+
+47
+00:05:28,750 --> 00:05:39,310
+types that set colors and the payload object with the property and value of primary color and secondary
+
+48
+00:05:39,310 --> 00:05:40,390
+color.
+
+49
+00:05:41,900 --> 00:05:46,970
+Had or reducers file will create another reduce her function.
+
+50
+00:05:47,230 --> 00:05:52,070
+It's going to put its resulting values on this Koehler's property of state.
+
+51
+00:05:52,300 --> 00:06:00,430
+So I'll add that to combine reducers and once again our first step will be to create an initial color
+
+52
+00:06:00,430 --> 00:06:12,010
+state object which will have an initial value of primary color and secondary color as empty strings.
+
+53
+00:06:12,400 --> 00:06:20,040
+Our colors reduce her function we'll have a default value of states set to initial colors state and
+
+54
+00:06:20,370 --> 00:06:20,940
+the action
+
+55
+00:06:25,180 --> 00:06:29,340
+will switch based on the action type.
+
+56
+00:06:29,370 --> 00:06:36,630
+Our first case will be action types that set colors where we want to return an object where we're accepting
+
+57
+00:06:38,190 --> 00:06:40,560
+the value of primary color from the action.
+
+58
+00:06:40,740 --> 00:06:50,110
+In particular the action payload and the value for secondary color from our action payload.
+
+59
+00:06:50,110 --> 00:07:02,230
+And of course we need a default case in case none of our cases are met.
+
+60
+00:07:02,240 --> 00:07:09,590
+So back in color panel once again will need connect
+
+61
+00:07:13,520 --> 00:07:17,660
+and will need the action that we just made so that colors
+
+62
+00:07:22,490 --> 00:07:25,530
+then we'll wire everything together at the bottom.
+
+63
+00:07:27,160 --> 00:07:29,140
+Connect or wrap color panel
+
+64
+00:07:32,480 --> 00:07:34,140
+will set maps to Propst.
+
+65
+00:07:34,150 --> 00:07:34,870
+No.
+
+66
+00:07:35,170 --> 00:07:36,630
+And the structure are set.
+
+67
+00:07:36,630 --> 00:07:40,070
+Colors action will save everything.
+
+68
+00:07:41,120 --> 00:07:51,790
+And I'll add one more rule to our color container cursor pointer give a little pointer icon to let our
+
+69
+00:07:51,790 --> 00:08:00,580
+user know that these icons clickable and once we click on it will open our read ex-staff tools
+
+70
+00:08:06,890 --> 00:08:15,950
+and we should see on our state object this property with primary color and secondary color updated to
+
+71
+00:08:15,950 --> 00:08:18,680
+the values contained on the icon.
+
+72
+00:08:21,720 --> 00:08:24,860
+So now and after Jesus we need to use maps say to props
+
+73
+00:08:28,120 --> 00:08:37,320
+and we want to get primary color from state colors primary color and secondary color from dark colors
+
+74
+00:08:38,850 --> 00:08:41,400
+not secondary color.
+
+75
+00:08:41,810 --> 00:08:44,840
+Want to provide both these colors in different places in our app.
+
+76
+00:08:47,670 --> 00:08:56,840
+First the structure both those values from the props before we replace the background rules that we've
+
+77
+00:08:56,840 --> 00:09:01,750
+set using the style props for a number of components with primary color and secondary color.
+
+78
+00:09:01,790 --> 00:09:10,310
+We want to go back to our reducers folder and set the initial values for primary color and secondary
+
+79
+00:09:10,310 --> 00:09:17,300
+color and initial color state on does that the primary color to horsy greasy foresee hex code and the
+
+80
+00:09:17,300 --> 00:09:20,050
+secondary color to Tripoli.
+
+81
+00:09:20,060 --> 00:09:26,570
+So now this allows us to replace each of the background rules with either a secondary color or primary
+
+82
+00:09:26,570 --> 00:09:27,830
+color.
+
+83
+00:09:27,870 --> 00:09:34,700
+You've said that using the style props will set the grid component to a background of secondary color
+
+84
+00:09:35,630 --> 00:09:43,890
+and that will give it the default value of X could triple the or passed down primary color via props
+
+85
+00:09:43,890 --> 00:09:45,550
+to our side panel component.
+
+86
+00:09:47,590 --> 00:09:53,800
+And with unsigned panel you can see we have the background rule set for our menu component.
+
+87
+00:09:53,980 --> 00:10:00,730
+So the structure primary color from its props and replace background with primary color
+
+88
+00:10:03,720 --> 00:10:05,550
+will also pass it down to our user panel
+
+89
+00:10:09,230 --> 00:10:12,130
+that when we navigate to that component
+
+90
+00:10:15,020 --> 00:10:26,790
+we can change its background roll with primary color and make sure to restructure that from the props
+
+91
+00:10:26,790 --> 00:10:34,290
+object primary color from props we can directly separate the values of background.
+
+92
+00:10:34,290 --> 00:10:35,820
+Now I can save all those files
+
+93
+00:10:38,780 --> 00:10:47,990
+and when our page reloads for at we should see the initial colors that we've always had for our application
+
+94
+00:10:48,410 --> 00:10:54,540
+but when we click on the icon we should see immediately the colors change to the colors that the user
+
+95
+00:10:54,540 --> 00:10:57,380
+set on the icon.
+
+96
+00:10:57,670 --> 00:10:59,980
+We choose some new map colors.
+
+97
+00:11:00,830 --> 00:11:03,720
+For example say dark red
+
+98
+00:11:06,690 --> 00:11:13,280
+as well as some green hue say a darker green.
+
+99
+00:11:13,320 --> 00:11:17,320
+We click on Save we should see a new icon.
+
+100
+00:11:17,400 --> 00:11:23,980
+Both of those colors when we click on that the primary and secondary colors overlap should change globally.
+

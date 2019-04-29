@@ -1,0 +1,284 @@
+1
+00:00:00,270 --> 00:00:04,770
+We've added some messages for our messages collection now we want to display those in or out for a given
+
+2
+00:00:04,770 --> 00:00:07,850
+channel within the messages component.
+
+3
+00:00:07,890 --> 00:00:10,930
+We set up our component dismount lifecycle method.
+
+4
+00:00:11,190 --> 00:00:16,980
+So when our component mounts or first check to see that we have a value in our global state for the
+
+5
+00:00:16,980 --> 00:00:22,120
+current channel and current user and we can get those guys from our state object as channel news or
+
+6
+00:00:22,740 --> 00:00:30,350
+we'll do structured those if there's a channel as well as the user will execute a listener's function
+
+7
+00:00:30,450 --> 00:00:39,390
+called add listeners and pass down the channel ID the current channel that we're on so we can add listeners
+
+8
+00:00:39,390 --> 00:00:47,560
+will have our channel ID parameter and as the name suggests we'll eventually have a number of listeners
+
+9
+00:00:48,010 --> 00:00:51,040
+within this function.
+
+10
+00:00:51,040 --> 00:00:57,210
+Our first listener will be the ad message listener will pass our channel ID that function as well.
+
+11
+00:00:58,610 --> 00:01:04,470
+With an ad message listener we're going to listen for any new messages added for a given channel for
+
+12
+00:01:04,530 --> 00:01:08,850
+first by creating an array called Loaded messages which will be empty.
+
+13
+00:01:08,940 --> 00:01:11,230
+Do not take our messages.
+
+14
+00:01:12,780 --> 00:01:20,830
+And select the child according to its channel ID and listen for a new child to be added.
+
+15
+00:01:21,510 --> 00:01:24,510
+And then we get this now.
+
+16
+00:01:26,870 --> 00:01:32,120
+And add the snap value to our loaded messages.
+
+17
+00:01:32,150 --> 00:01:39,340
+We are the push method and for now it will log or loaded messages or array within the console.
+
+18
+00:01:39,410 --> 00:01:47,420
+So if we take a look at our console on the first Hannele can see we have our two messages for that given
+
+19
+00:01:47,990 --> 00:01:49,010
+channel ID.
+
+20
+00:01:51,650 --> 00:01:58,250
+And once again we want to put these messages within state using said state.
+
+21
+00:01:58,410 --> 00:02:06,130
+The first will set messages the messages property to loaded messages and also have a property called
+
+22
+00:02:06,220 --> 00:02:14,390
+messages loading set to false to keep track of when our messages are loaded as well.
+
+23
+00:02:14,440 --> 00:02:17,150
+Add both of those to our state messages and messages.
+
+24
+00:02:17,140 --> 00:02:25,860
+Loading and it will be set to true by default only when we set up or add message listener messages loading
+
+25
+00:02:25,860 --> 00:02:27,570
+be changed to false.
+
+26
+00:02:27,900 --> 00:02:31,670
+Then will the structure messages then render.
+
+27
+00:02:31,740 --> 00:02:41,520
+Now iterate over it with a new function called display messages and pass our messages array to it.
+
+28
+00:02:44,620 --> 00:02:49,220
+The render or create display messages will take in that messages.
+
+29
+00:02:49,590 --> 00:02:55,060
+First check to see that the length of that array is greater than zero.
+
+30
+00:02:55,110 --> 00:03:01,020
+So we actually have some values for it and in that case we will iterate over the messages are using
+
+31
+00:03:01,200 --> 00:03:10,090
+the map method and print each message we will put the message via this message component which will
+
+32
+00:03:10,090 --> 00:03:16,140
+create in our messages folder so message that day as we will import re-act up at the top.
+
+33
+00:03:19,370 --> 00:03:27,720
+And this will be a seamless functional component because the message then will export message at the
+
+34
+00:03:27,720 --> 00:03:29,380
+bottom.
+
+35
+00:03:29,760 --> 00:03:34,180
+You know first import that in our messages file
+
+36
+00:03:39,920 --> 00:03:48,090
+and we're going to pass down a number of props to our newly created message component.
+
+37
+00:03:48,140 --> 00:03:54,620
+The first thing that we need to add is our key since we're iterating over this give it a unique identifier
+
+38
+00:03:55,020 --> 00:04:04,780
+message that time stamp will pass down the entire message object that we're getting as this message
+
+39
+00:04:04,790 --> 00:04:15,850
+prompt and also passed on the user the current user from our state object with this state user.
+
+40
+00:04:15,960 --> 00:04:25,260
+Then within message we'll build out our message component will grab the comment component from semantic
+
+41
+00:04:25,260 --> 00:04:29,840
+UI and this will be the parent component in our message
+
+42
+00:04:32,270 --> 00:04:37,400
+structure the message and user prop's or the proxy object.
+
+43
+00:04:37,400 --> 00:04:42,080
+The first thing within this comment I will include is the avatar of the user that created the message
+
+44
+00:04:43,030 --> 00:04:50,200
+will give it a source current or Avatar component a source of messages that user that Avatar and the
+
+45
+00:04:50,250 --> 00:04:52,110
+Avatar will have the content of the message.
+
+46
+00:04:52,110 --> 00:04:56,210
+The text of the message will put that within Commodore content.
+
+47
+00:04:56,230 --> 00:05:00,900
+But first we want to give it a classroom that's conditionally determined based on a function called
+
+48
+00:05:00,930 --> 00:05:07,080
+is own message which will take the message and user props will create this is own message outside of
+
+49
+00:05:07,080 --> 00:05:12,660
+our message component and then his own message will determine whether the ID of the user that's currently
+
+50
+00:05:12,660 --> 00:05:18,480
+authenticated is the same as the id of the user that created the message and give our comment if our
+
+51
+00:05:18,480 --> 00:05:20,450
+message compliant a special class.
+
+52
+00:05:20,460 --> 00:05:25,770
+In that case just to see visually that we wrote the comment or the person that's currently authenticated
+
+53
+00:05:25,770 --> 00:05:28,150
+wrote the comment.
+
+54
+00:05:28,190 --> 00:05:34,790
+So if those two ideas are the same we'll give it a class of message self otherwise no class within the
+
+55
+00:05:34,790 --> 00:05:40,040
+current content include the comment author the message author.
+
+56
+00:05:40,100 --> 00:05:48,940
+Make it as a tag and interpolate message that user name get the creator of the message and include some
+
+57
+00:05:49,120 --> 00:05:50,150
+comment meta data.
+
+58
+00:05:50,200 --> 00:05:55,360
+Namely we want to show the date or the time that it was created.
+
+59
+00:05:55,360 --> 00:05:59,740
+Once again will create another function which will call time from now it will take the message time
+
+60
+00:05:59,740 --> 00:06:09,380
+stamp when the message was created and convert it into a time from the current moment.
+
+61
+00:06:09,550 --> 00:06:16,420
+So we're going to use the date and time formatting library moment in order to format this time stamp
+
+62
+00:06:16,660 --> 00:06:21,330
+or to give us a period of time has passed since the comment was created.
+
+63
+00:06:21,370 --> 00:06:27,110
+So passen time stamp to the moment function and then we'll call the from now method on it.
+
+64
+00:06:29,380 --> 00:06:33,020
+Well that will give us the amount of time lapse since the comment was created.
+
+65
+00:06:33,530 --> 00:06:45,650
+Then oniony the time going to include the text of the message content the text itself.
+
+66
+00:06:45,670 --> 00:06:50,920
+Now we need to create this message self class within our applet CSSA file.
+
+67
+00:06:50,920 --> 00:06:54,150
+Create a separate section or a message component
+
+68
+00:06:57,780 --> 00:07:07,920
+in message cell consist of a border left of two pixels solid orange no padding left.
+
+69
+00:07:08,910 --> 00:07:13,880
+Of 8 pixels will just be a vertical line next to every count.
+
+70
+00:07:13,890 --> 00:07:22,290
+That's our message and you are two messages for our first Channel 4 channel are now appearing in our
+
+71
+00:07:22,290 --> 00:07:23,220
+messages section.
+

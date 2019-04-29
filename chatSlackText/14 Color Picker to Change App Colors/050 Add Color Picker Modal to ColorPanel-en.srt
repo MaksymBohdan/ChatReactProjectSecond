@@ -1,0 +1,172 @@
+1
+00:00:00,770 --> 00:00:02,740
+Is move onto to a color panel.
+
+2
+00:00:03,060 --> 00:00:09,000
+We created this button that we'll be able to click on and we want to display a model to our users for
+
+3
+00:00:09,000 --> 00:00:11,510
+them to be able to choose the colors of their app.
+
+4
+00:00:11,580 --> 00:00:16,890
+So I want to create a kind of color picker or head of the color panel component.
+
+5
+00:00:18,940 --> 00:00:26,810
+We're going to bring in a modal component the icon components and label components from semantic UI
+
+6
+00:00:29,200 --> 00:00:38,580
+nuance of first and an on unclick to our button which will open a modal.
+
+7
+00:00:38,650 --> 00:00:40,590
+So first we want to create a state object
+
+8
+00:00:44,700 --> 00:00:48,500
+with a modal property set initially to false and we've covered this a number of times.
+
+9
+00:00:49,740 --> 00:00:56,660
+We'll create an open modal function where it will set the State of the modal property to True.
+
+10
+00:00:57,360 --> 00:00:57,950
+Copy that
+
+11
+00:01:01,100 --> 00:01:06,890
+will create a closed modal function which will set the modal property to False
+
+12
+00:01:09,770 --> 00:01:15,310
+and underneath the button will create our color picker model.
+
+13
+00:01:15,620 --> 00:01:25,210
+So this will consist of the modal component where basic styling will open according to the modal property
+
+14
+00:01:25,210 --> 00:01:27,650
+and stay cool.
+
+15
+00:01:30,230 --> 00:01:32,050
+The structure modal from St.
+
+16
+00:01:35,660 --> 00:01:38,210
+and all have an on close.
+
+17
+00:01:38,740 --> 00:01:40,990
+So to are close modal function
+
+18
+00:01:44,610 --> 00:01:51,800
+so intermodal Herse have a header the text to choose colors
+
+19
+00:01:56,240 --> 00:01:57,980
+then will have a content area.
+
+20
+00:02:02,040 --> 00:02:03,930
+And then add actions area
+
+21
+00:02:06,990 --> 00:02:10,330
+when actions will have two buttons.
+
+22
+00:02:10,330 --> 00:02:12,390
+The first the color green
+
+23
+00:02:17,530 --> 00:02:27,960
+proper inverted an icon within it with the name set to check mark with the text of saved colors.
+
+24
+00:02:28,580 --> 00:02:32,600
+Well copy that and paste another one in.
+
+25
+00:02:32,610 --> 00:02:41,920
+Underneath the color red the name of remove the icon and the text of cancell now within our modal content
+
+26
+00:02:41,920 --> 00:02:46,570
+area we want to show a color picker which will allow users to pick the color that they want for their
+
+27
+00:02:46,570 --> 00:02:47,160
+app.
+
+28
+00:02:47,270 --> 00:02:52,330
+We use the package re-act color for this which gives us a number of color pictures to choose from with
+
+29
+00:02:52,330 --> 00:02:56,120
+a number of different styles.
+
+30
+00:02:56,210 --> 00:03:01,760
+You can certainly choose any of the ones available that you see on their documentation page but I'm
+
+31
+00:03:01,760 --> 00:03:09,390
+going to choose the slider component that they have available so to import that up at the top.
+
+32
+00:03:11,630 --> 00:03:15,970
+Well grab slider picker from re-act color
+
+33
+00:03:19,360 --> 00:03:26,050
+and then we'll put that within our content area first with the label component or label it with the
+
+34
+00:03:26,050 --> 00:03:33,270
+text of primary color then we'll have our first lighter picker for the primary color of our app.
+
+35
+00:03:33,640 --> 00:03:44,880
+And then another label with the text of secondary color and another picker to choose the secondary color.
+
+36
+00:03:47,090 --> 00:03:55,510
+And once we save our files and take a look in our app at the moto by clicking on the button and our
+
+37
+00:03:55,510 --> 00:04:00,540
+color panel you can see both of our slider pictures.
+
+38
+00:04:00,790 --> 00:04:04,390
+And these are pretty neat because they allow us to pick a certain part of the color spectrum and narrow
+
+39
+00:04:04,390 --> 00:04:08,640
+down the color we want with these different shades.
+
+40
+00:04:08,980 --> 00:04:12,020
+And we also want to toggle the model by clicking on the cancellation.
+
+41
+00:04:12,130 --> 00:04:22,070
+So the last thing we'll do is add an unclick to our cancelbot which will reference our close model function.
+
+42
+00:04:22,160 --> 00:04:28,340
+So now we can show our color picker motile by clicking on the plus one and hide it by clicking on the
+
+43
+00:04:28,450 --> 00:04:28,850
+cancelbot.
+
